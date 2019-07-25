@@ -1,5 +1,5 @@
 # Andrés Vargas Ramírez - Beehive
-Proyecto Final de Programación Web Dinámica. Profesor: Esteban Padilla.
+Final Project of Programación Web Dinámica. Professor: Esteban Padilla.
 
 **Languajes**
 >HTML
@@ -9,4 +9,4 @@ Proyecto Final de Programación Web Dinámica. Profesor: Esteban Padilla.
 >JS
 
 **Framework**
->Bootstrap 4.1
+>Bootstrap 4.3.1
