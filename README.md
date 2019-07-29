@@ -7,6 +7,3 @@ Final Project of Programación Web Dinámica. Professor: Esteban Padilla.
 >SASS
 
 >JS
-
-**Framework**
->Bootstrap 4.3.1
