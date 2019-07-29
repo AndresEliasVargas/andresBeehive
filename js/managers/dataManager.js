@@ -67,7 +67,7 @@ class DataManager {
                 const data = JSON.parse(request.response);
                 console.log(data);
 
-                //Parse Posts
+                //Parse All
                 this.getPosts();
                 this.getComments();
                 this.getAlbums();
@@ -134,7 +134,7 @@ class DataManager {
 
     //Compare
     setUserPost(post) {
-		this.users.forEach(user => {
+		this.users.map(user => {
 			if (user.id === post.userid) {
 				//add post to user
 			}
