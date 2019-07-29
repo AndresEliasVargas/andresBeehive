@@ -1,7 +1,4 @@
 'use strict';
 
-const init = () =>{
-    let appManager = new AppManager();
-};
-
+const init = () =>{ let appManager = new AppManager(); };
 init();
