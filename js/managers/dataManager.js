@@ -11,52 +11,41 @@ class DataManager {
 
     getData() {
         //console.log('downloadData');
-        this.getUsers();
+        const request = this.getUsers();
     };
 
     //Get JSON
     getUsers() {
-        let request = new XMLHttpRequest();
-        request.open('GET', this.url + 'users', true);
-        request.onreadystatechange = this.getUsersCallback.bind(this);
-        request.send();
+        const request = this.createRequest('users', this.getUsersCallback);
     };
 
     getPosts() {
-        let request = new XMLHttpRequest();
-        request.open('GET', this.url + 'posts', true);
-        request.onreadystatechange = this.getPostsCallback.bind(this);
-        request.send();
+        const request = this.createRequest('posts', this.getPostsCallback);
     };
 
     getComments() {
-        let request = new XMLHttpRequest();
-        request.open('GET', this.url + 'comments', true);
-        request.onreadystatechange = this.getComentsCallback.bind(this);
-        request.send();
+        const request = this.createRequest('commets', this.getComentsCallback);
     };
 
     getAlbums() {
-        let request = new XMLHttpRequest();
-        request.open('GET', this.url + 'albums', true);
-        request.onreadystatechange = this.getAlbumsCallback.bind(this);
-        request.send();
+        const request = this.createRequest('albums', this.getAlbumsCallback);
     };
 
     getPhotos() {
-        let request = new XMLHttpRequest();
-        request.open('GET', this.url + 'photos', true);
-        request.onreadystatechange = this.getPhotosCallback.bind(this);
-        request.send();
+        const request = this.createRequest('photos', this.getPhotosCallback);
     };
 
     getTodos() {
-        let request = new XMLHttpRequest();
-        request.open('GET', this.url + 'todos', true);
-        request.onreadystatechange = this.getTodosCallback.bind(this);
-        request.send();
+        const request = this.createRequest('todos', this.getTodosCallback);
     };
 
+    createRequest(value, callback){
+        let request = new XMLHttpRequest();
+        request.open('GET', this.url + value, true);
+        request.onreadystatechange = callback.bind(this);
+        request.send();
+        return request;
+    }
 
     //Get CallBacks
     getUsersCallback(e) {
@@ -65,14 +54,12 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
                 const data = JSON.parse(request.response);
-                console.log(data);
+                //console.log(data);
 
-                //Parse All
-                this.getPosts();
-                this.getComments();
-                this.getAlbums();
-                this.getPhotos();
-                this.getTodos();
+                data.map(userData => {
+                    let bee = new Bee(userData.id, userData.name, userData.username, userData.email, userData.address, userData.phone, userData.website, userData.company);
+                    console.log(bee);
+                });
             };
         };
     };
@@ -83,7 +70,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
                 const data = JSON.parse(request.response);
-                console.log(data);
+                //console.log(data);
             };
         };
     };
@@ -94,7 +81,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
                 const data = JSON.parse(request.response);
-                console.log(data);
+                //console.log(data);
             };
         };
     };
@@ -105,7 +92,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
                 const data = JSON.parse(request.response);
-                console.log(data);
+                //console.log(data);
             };
         };
     };
@@ -116,7 +103,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
                 const data = JSON.parse(request.response);
-                console.log(data);
+                //console.log(data);
             };
         };
     };
@@ -127,7 +114,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
                 const data = JSON.parse(request.response);
-                console.log(data);
+                //console.log(data);
             };
         };
     };
