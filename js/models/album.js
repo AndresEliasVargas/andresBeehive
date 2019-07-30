@@ -7,5 +7,5 @@ class Album{
         this.userId = pUserId;
 
         this.photos = [];
-    }
-}
+    };
+};

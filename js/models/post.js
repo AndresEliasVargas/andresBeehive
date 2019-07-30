@@ -8,5 +8,5 @@ class Post{
         this.title = pTitle;
 
         this.comments = [];
-    }
+    };
 };

@@ -8,4 +8,4 @@ class Comment{
         this.email = pEmail;
         this.body = pBody;
     };
-}
+};

@@ -6,4 +6,4 @@ class Company{
         this.catchPhrase = pCatchPhrase;
         this.name = pName;
     };
-}
+};

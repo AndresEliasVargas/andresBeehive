@@ -14,5 +14,5 @@ class Bee {
 		this.posts = [];
 		this.albums = [];
 		this.todos = [];
-	}
-}
+	};
+};
