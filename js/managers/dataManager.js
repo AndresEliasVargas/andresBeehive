@@ -107,8 +107,10 @@ class DataManager {
             if (request.status === 200) {
                 const commentsData = JSON.parse(request.response);
 
-                let comment = new Comment(0, 'name', 1, 'commentData.email', 'commentData.body');
-                //this.addCommentToPostBee(comment);
+                let comment = new Comment(0, 'bla bla bla bla bla', 1, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+                comment = new Comment(0, 'bla bla bla bla bla', 2, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
 
                 commentsData.map(commentData => {
                     //console.log(commentData);
