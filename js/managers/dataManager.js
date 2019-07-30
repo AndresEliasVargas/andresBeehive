@@ -12,6 +12,7 @@ class DataManager {
         const request = this.getUsers();
     };
 
+
     //Get JSON
     getUsers() {
         const request = this.createRequest('users', this.getUsersCallback);
@@ -37,13 +38,14 @@ class DataManager {
         const request = this.createRequest('todos', this.getTodosCallback);
     };
 
-    createRequest(value, callback) {
+    createRequest(adress, callback) {
         let request = new XMLHttpRequest();
-        request.open('GET', this.url + value, true);
+        request.open('GET', this.url + adress, true);
         request.onreadystatechange = callback.bind(this);
         request.send();
         return request;
     }
+
 
     //Get CallBacks
     getUsersCallback(e) {
@@ -117,7 +119,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const albumsData = JSON.parse(request.response);
-                
+
                 albumsData.map(album => {
                     //console.log(album);
                     let albumObj = new Album(album.id, album.title, album.userId);
@@ -137,9 +139,7 @@ class DataManager {
                 const photosData = JSON.parse(request.response);
 
                 photosData.map(photo => {
-                    //console.log(photo);
-
-                    let photos = new Photo(photo.albumID, photo.id, photo.thumbnailUrl, photo.title, photo.url);
+                    let photos = new Photo(photo.albumId, photo.id, photo.thumbnailUrl, photo.title, photo.url);
                     this.addPhotosToAlbum(photos);
                 });
             };
@@ -156,6 +156,7 @@ class DataManager {
             };
         };
     };
+
 
     //Add Info to respective Objects
     addPostToBee(post) {
@@ -181,7 +182,7 @@ class DataManager {
         };
     };
 
-    addAlbumToBee(album){
+    addAlbumToBee(album) {
         for (let i = 0; i < this.bees.length; i++) {
             const bee = this.bees[i];
             if (bee.id === album.userId) {
@@ -189,19 +190,23 @@ class DataManager {
                 break;
             };
         };
-    }   
+    }
 
+    //OJO ESTO NO FUNCIONA
     addPhotosToAlbum(photo) {
-        // for (let i = 0; i < this.bees.length; i++) {
-        //     const bee = this.bees[i];
-        //     for (let j = 0; j < bee.albums.length; j++) {
-        //         const album = bee.albums[j];
-        //         if (album.id === photo.albumId) {
-        //             album.photos.push(photo);
-        //             break;
-        //         };
-        //     };
-        // };
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            for (let j = 0; j < bee.albums.length; j++) {
+                const album = bee.albums[j];
+                if (album.id === photo.albumId) {
+                    album.photos.push(photo);
+                    break;
+                };
+            };
+        };
     };
 
+    // addTodosToBee() {
+
+    // };
 };
