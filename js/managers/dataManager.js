@@ -151,8 +151,15 @@ class DataManager {
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                const data = JSON.parse(request.response);
-                console.log(data);
+                const todosData = JSON.parse(request.response);
+                //console.log(todosData);
+
+                todosData.map(todo => {
+                    // console.log(todo);
+                    
+                    let todos = new todos(todo.userId, todo.title, todo.id, todo.completed);
+                    this.addTodosToBee(todos);
+                });
             };
         };
     };
@@ -192,7 +199,6 @@ class DataManager {
         };
     }
 
-    //OJO ESTO NO FUNCIONA
     addPhotosToAlbum(photo) {
         for (let i = 0; i < this.bees.length; i++) {
             const bee = this.bees[i];
@@ -206,7 +212,7 @@ class DataManager {
         };
     };
 
-    // addTodosToBee() {
-
-    // };
+    addTodosToBee(todos) {
+        
+    };
 };
