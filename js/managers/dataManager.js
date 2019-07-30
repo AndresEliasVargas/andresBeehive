@@ -55,9 +55,9 @@ class DataManager {
                 //console.log(data);	
 
                 let geo = new Geo(0, 0);
-                let address = new Address('Cartago', geo, '200 mts oeste del estadio', '1000', '1000');
-                let company = new Company('Todos para uno y uno para todos.', 'La luna es bonita', 'Arajo');
-                let bee = new Bee(0, 'Esteban', 'epadilla', 'epadilla@mail.com', address, '87066660', 'estebanpadilla.com', 'Esteban Company');
+                let address = new Address('San José', geo, 'Calle 43', '3035', '10803');
+                let company = new Company('​Si no vivimos como pensamos, pronto empezaremos a pensar como vivimos.', 'A trabajar carajo xD', 'Entrepreneur');
+                let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@mail.com', address, '71341350', 'https://github.com/AndresEliasVargas', company);
                 this.bees.push(bee);
 
                 data.forEach(userData => {
@@ -70,8 +70,7 @@ class DataManager {
 
                 this.getPosts();
                 this.getAlbums();
-                //this.getPhotos();
-                //this.getTodos();
+                this.getTodos();
 
                 console.log(this.bees);
             };
@@ -95,16 +94,6 @@ class DataManager {
         };
     };
 
-    addPostToBee(post) {
-        for (let i = 0; i < this.bees.length; i++) {
-            const bee = this.bees[i];
-            if (bee.id === post.userId) {
-                bee.posts.push(post);
-                break;
-            };
-        };
-    };
-
     getComentsCallback(e) {
         let request = e.target;
 
@@ -122,19 +111,6 @@ class DataManager {
         };
     };
 
-    addCommentToPostBee(comment) {
-        for (let i = 0; i < this.bees.length; i++) {
-            const bee = this.bees[i];
-            for (let j = 0; j < bee.posts.length; j++) {
-                const post = bee.posts[j];
-                if (post.id === comment.postId) {
-                    post.comments.push(comment);
-                    break;
-                };
-            };
-        };
-    };
-
     getAlbumsCallback(e) {
         let request = e.target;
 
@@ -144,30 +120,28 @@ class DataManager {
                 
                 albumsData.map(album => {
                     //console.log(album);
-                    let album = new Album(album.id, album.title, album.userId);
-                    this.addPhotosToBee(album);
+                    let albumObj = new Album(album.id, album.title, album.userId);
+                    this.addAlbumToBee(albumObj);
                 });
             };
+
+            this.getPhotos();
         };
     };
-
-    addPhotosToBee(album){
-        for (let i = 0; i < this.bees.length; i++) {
-            const bee = this.bees[i];
-            if (bee.id === album.userId) {
-                bee.posts.push(album);
-                break;
-            };
-        };
-    }
 
     getPhotosCallback(e) {
         let request = e.target;
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                const data = JSON.parse(request.response);
-                console.log(data);
+                const photosData = JSON.parse(request.response);
+
+                photosData.map(photo => {
+                    //console.log(photo);
+
+                    let photos = new Photo(photo.albumID, photo.id, photo.thumbnailUrl, photo.title, photo.url);
+                    this.addPhotosToAlbum(photos);
+                });
             };
         };
     };
@@ -181,6 +155,53 @@ class DataManager {
                 console.log(data);
             };
         };
+    };
+
+    //Add Info to respective Objects
+    addPostToBee(post) {
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            if (bee.id === post.userId) {
+                bee.posts.push(post);
+                break;
+            };
+        };
+    };
+
+    addCommentToPostBee(comment) {
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            for (let j = 0; j < bee.posts.length; j++) {
+                const post = bee.posts[j];
+                if (post.id === comment.postId) {
+                    post.comments.push(comment);
+                    break;
+                };
+            };
+        };
+    };
+
+    addAlbumToBee(album){
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            if (bee.id === album.userId) {
+                bee.albums.push(album);
+                break;
+            };
+        };
+    }   
+
+    addPhotosToAlbum(photo) {
+        // for (let i = 0; i < this.bees.length; i++) {
+        //     const bee = this.bees[i];
+        //     for (let j = 0; j < bee.albums.length; j++) {
+        //         const album = bee.albums[j];
+        //         if (album.id === photo.albumId) {
+        //             album.photos.push(photo);
+        //             break;
+        //         };
+        //     };
+        // };
     };
 
 };
