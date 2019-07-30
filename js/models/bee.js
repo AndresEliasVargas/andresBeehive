@@ -10,5 +10,7 @@ class Bee {
 		this.phone = pphone;
 		this.website = pwebsite;
 		this.company = pcompany;
+
+		this.posts = [];
 	}
 }

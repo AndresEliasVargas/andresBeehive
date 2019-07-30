@@ -85,8 +85,15 @@ class DataManager {
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                const data = JSON.parse(request.response);
-                console.log(data);
+                const posts = JSON.parse(request.response);
+
+                posts.map(postData => {
+                    let post = new Post(postData.id, postData.userId, postData.body, postData.title);
+
+                    this.addPostToBee(post);
+
+                    console.log(post);
+                });
             };
         };
     };
@@ -135,13 +142,15 @@ class DataManager {
         };
     };
 
-    //Compare
-    setUserPost(post) {
-        this.users.map(user => {
-            if (user.id === post.userid) {
-                //add post to user
-            }
-        });
-    }
+    //Relations
+    addPostToBee(post) {
+        for (let i = 0; i < this.bees.lenght; i++) {
+            const bee = this.bees[i];
+
+            if (bee.id === post.userId) {
+                bee.posts.push(post);
+            };
+        };
+    };
 
 };
