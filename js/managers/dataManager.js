@@ -85,9 +85,13 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const postsData = JSON.parse(request.response);
+                console.log(postsData);
+
+                let post = new Post(0, 0, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores velit perspiciatis esse eveniet alias enim, totam voluptas recusandae numquam tempora libero molestiae aliquid nesciunt. Tempore enim dolor eligendi tempora architecto!', 'Lorem Ipsum');
+                this.addPostToBee(post);
 
                 postsData.forEach(postData => {
-                    let post = new Post(postData.id, postData.userId, postData.body, postData.title);
+                    post = new Post(postData.id, postData.userId, postData.body, postData.title);
                     this.addPostToBee(post);
                 });
             };
@@ -103,10 +107,13 @@ class DataManager {
             if (request.status === 200) {
                 const commentsData = JSON.parse(request.response);
 
+                let comment = new Comment(0, 'name', 1, 'commentData.email', 'commentData.body');
+                //this.addCommentToPostBee(comment);
+
                 commentsData.map(commentData => {
                     //console.log(commentData);
 
-                    let comment = new Comment(commentData.postId, commentData.name, commentData.id, commentData.email, commentData.body);
+                    comment = new Comment(commentData.postId, commentData.name, commentData.id, commentData.email, commentData.body);
                     this.addCommentToPostBee(comment);
                 });
             };
@@ -119,6 +126,9 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const albumsData = JSON.parse(request.response);
+
+                // let albumObj = new Album(album.id, album.title, album.userId);
+                // this.addAlbumToBee(albumObj);
 
                 albumsData.map(album => {
                     //console.log(album);
@@ -138,6 +148,9 @@ class DataManager {
             if (request.status === 200) {
                 const photosData = JSON.parse(request.response);
 
+                // let photos = new Photo(photo.albumId, photo.id, photo.thumbnailUrl, photo.title, photo.url);
+                // this.addPhotosToAlbum(photos);
+
                 photosData.map(photo => {
                     let photos = new Photo(photo.albumId, photo.id, photo.thumbnailUrl, photo.title, photo.url);
                     this.addPhotosToAlbum(photos);
@@ -154,9 +167,12 @@ class DataManager {
                 const todosData = JSON.parse(request.response);
                 //console.log(todosData);
 
+                // let todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
+                // this.addTodosToBee(todos);
+
                 todosData.map(todo => {
                     // console.log(todo);
-                    
+
                     let todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
                     this.addTodosToBee(todos);
                 });
