@@ -85,7 +85,7 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const postsData = JSON.parse(request.response);
-                console.log(postsData);
+                //console.log(postsData);
 
                 let post = new Post(0, 0, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores velit perspiciatis esse eveniet alias enim, totam voluptas recusandae numquam tempora libero molestiae aliquid nesciunt. Tempore enim dolor eligendi tempora architecto!', 'Lorem Ipsum');
                 this.addPostToBee(post);
@@ -169,13 +169,22 @@ class DataManager {
                 const todosData = JSON.parse(request.response);
                 //console.log(todosData);
 
-                // let todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
-                // this.addTodosToBee(todos);
+                let todos = new Todos(0, 'Hacer tarea', 1, true);
+                this.addTodosToBee(todos);
+
+                todos = new Todos(0, 'Limpiar la casa', 2, false);
+                this.addTodosToBee(todos);
+
+                todos = new Todos(0, 'Cocinar', 3, true);
+                this.addTodosToBee(todos);
+                
+                todos = new Todos(0, 'Estudiar', 4, false);
+                this.addTodosToBee(todos);
 
                 todosData.map(todo => {
                     // console.log(todo);
 
-                    let todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
+                    todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
                     this.addTodosToBee(todos);
                 });
             };
