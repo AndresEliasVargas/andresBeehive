@@ -5,12 +5,10 @@ class DataManager {
         this.appManager = pAppManager;
         this.url = 'https://jsonplaceholder.typicode.com/';
         this.bees = [];
-
         this.getData();
     };
 
     getData() {
-        //console.log('downloadData');
         const request = this.getUsers();
     };
 
@@ -24,7 +22,7 @@ class DataManager {
     };
 
     getComments() {
-        const request = this.createRequest('commets', this.getComentsCallback);
+        const request = this.createRequest('comments', this.getComentsCallback);
     };
 
     getAlbums() {
@@ -54,26 +52,25 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const data = JSON.parse(request.response);
-                //console.log(data);
+                //console.log(data);	
 
-                //Datos Quemados
-                let company = new Company('Si no vivimos como pensamos, pronto empezaremos a pensar como vivimos', 'A trabajar carajo xD', 'Entrepreneur');
                 let geo = new Geo(0, 0);
-                let address = new Address('San José', geo, 'Calle 43', '1000', '10803');
-                let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@gmail.com', address, '71341350', 'https://github.com/AndresEliasVargas', company);
+                let address = new Address('Cartago', geo, '200 mts oeste del estadio', '1000', '1000');
+                let company = new Company('Todos para uno y uno para todos.', 'La luna es bonita', 'Arajo');
+                let bee = new Bee(0, 'Esteban', 'epadilla', 'epadilla@mail.com', address, '87066660', 'estebanpadilla.com', 'Esteban Company');
                 this.bees.push(bee);
 
-                data.map(userData => {
-                    company = new Company(userData.company.bs, userData.company.catchPhrase, userData.company.name);
+                data.forEach(userData => {
                     geo = new Geo(userData.address.geo.lat, userData.address.geo.lng);
                     address = new Address(userData.address.city, geo, userData.address.street, userData.address.suite, userData.address.zipcode);
+                    company = new Company(userData.company.bs, userData.company.catchPhrase, userData.company.name);
                     bee = new Bee(userData.id, userData.name, userData.username, userData.email, address, userData.phone, userData.website, company);
-
                     this.bees.push(bee);
                 });
-
-                //Parse All
                 this.getPosts();
+                //this.getAlbums();
+                //this.getPhotos();
+                //this.getTodos();
 
                 console.log(this.bees);
             };
@@ -85,15 +82,24 @@ class DataManager {
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                const posts = JSON.parse(request.response);
+                const postsData = JSON.parse(request.response);
 
-                posts.map(postData => {
+                postsData.forEach(postData => {
                     let post = new Post(postData.id, postData.userId, postData.body, postData.title);
-
                     this.addPostToBee(post);
-
-                    console.log(post);
                 });
+            };
+
+            this.getComments();
+        };
+    };
+
+    addPostToBee(post) {
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            if (bee.id === post.userId) {
+                bee.posts.push(post);
+                break;
             };
         };
     };
@@ -103,8 +109,28 @@ class DataManager {
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                const data = JSON.parse(request.response);
-                console.log(data);
+                const commentsData = JSON.parse(request.response);
+
+                commentsData.map(commentData => {
+                    //console.log(commentData);
+
+                    let comment = new Comment(commentData.postId, commentData.name, commentData.id, commentData.email, commentData.body);
+                    this.addCommentToPostBee(comment);
+
+                });
+            };
+        };
+    };
+
+    addCommentToPostBee(comment) {
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            for (let j = 0; j < bee.posts.length; j++) {
+                const post = bee.posts[j];
+                if (post.id === comment.postId) {
+                    post.comments.push(comment);
+                    break;
+                };
             };
         };
     };
@@ -141,24 +167,5 @@ class DataManager {
             };
         };
     };
-
-    //Relations
-    addPostToBee(post) {
-        for (let i = 0; i < this.bees.lenght; i++) {
-            const bee = this.bees[i];
-
-            if (bee.id === post.userId) {
-                bee.posts.push(post);
-                break;
-            };
-        };
-    };
-
-    addCommentsToBeePost(comment){
-        for (let i = 0; i < this.bees.lenght; i++) {
-            const bee = this.bees[i];
-            
-        };
-    }
 
 };
