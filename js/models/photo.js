@@ -6,5 +6,6 @@ class Photo{
         this.id = pId;
         this.thimbnailUrl = pThumbnailUrl;
         this.title = pTitle;
+        this.url = pUrl;
     };
 };

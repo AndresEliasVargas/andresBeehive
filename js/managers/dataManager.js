@@ -154,13 +154,15 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const albumsData = JSON.parse(request.response);
+                //console.log(albumsData);
+                
 
-                // let albumObj = new Album(album.id, album.title, album.userId);
-                // this.addAlbumToBee(albumObj);
+                let albumObj = new Album(101, 'Mascotas', 0);
+                this.addAlbumToBee(albumObj);
 
                 albumsData.map(album => {
                     //console.log(album);
-                    let albumObj = new Album(album.id, album.title, album.userId);
+                    albumObj = new Album(album.id, album.title, album.userId);
                     this.addAlbumToBee(albumObj);
                 });
             };
@@ -175,12 +177,13 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 const photosData = JSON.parse(request.response);
+                //console.log(photosData);
 
-                // let photos = new Photo(photo.albumId, photo.id, photo.thumbnailUrl, photo.title, photo.url);
-                // this.addPhotosToAlbum(photos);
+                let photos = new Photo(101, 5001, '../../imgs/pusheen.jpeg', 'Pusshen', '../../imgs/pusheen.jpeg');
+                this.addPhotosToAlbum(photos);
 
                 photosData.map(photo => {
-                    let photos = new Photo(photo.albumId, photo.id, photo.thumbnailUrl, photo.title, photo.url);
+                    photos = new Photo(photo.albumId, photo.id, photo.thumbnailUrl, photo.title, photo.url);
                     this.addPhotosToAlbum(photos);
                 });
             };
