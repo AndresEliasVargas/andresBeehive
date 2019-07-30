@@ -157,7 +157,7 @@ class DataManager {
                 todosData.map(todo => {
                     // console.log(todo);
                     
-                    let todos = new todos(todo.userId, todo.title, todo.id, todo.completed);
+                    let todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
                     this.addTodosToBee(todos);
                 });
             };
@@ -212,7 +212,13 @@ class DataManager {
         };
     };
 
-    addTodosToBee(todos) {
-        
+    addTodosToBee(todo) {
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            if (bee.id === todo.userId) {
+                bee.todos.push(todo);
+                break;
+            };
+        };
     };
 };
