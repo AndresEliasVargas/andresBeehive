@@ -87,7 +87,12 @@ class DataManager {
                 const postsData = JSON.parse(request.response);
                 //console.log(postsData);
 
+                //Post 1
                 let post = new Post(0, 0, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores velit perspiciatis esse eveniet alias enim, totam voluptas recusandae numquam tempora libero molestiae aliquid nesciunt. Tempore enim dolor eligendi tempora architecto!', 'Lorem Ipsum');
+                this.addPostToBee(post);
+
+                //Post 2
+                post = new Post(101, 0, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores velit perspiciatis esse eveniet alias enim, totam voluptas recusandae numquam tempora libero molestiae aliquid nesciunt. Tempore enim dolor eligendi tempora architecto!', 'Lorem Ipsum');
                 this.addPostToBee(post);
 
                 postsData.forEach(postData => {
@@ -107,9 +112,30 @@ class DataManager {
             if (request.status === 200) {
                 const commentsData = JSON.parse(request.response);
 
+                //post 1
                 let comment = new Comment(0, 'bla bla bla bla bla', 1, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
                 this.addCommentToPostBee(comment);
+                
                 comment = new Comment(0, 'bla bla bla bla bla', 2, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+
+                comment = new Comment(0, 'bla bla bla bla bla', 3, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+
+                comment = new Comment(0, 'bla bla bla bla bla', 4, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+
+                //post 2 - arreglar
+                comment = new Comment(101, 'bla bla bla bla bla', 1, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+                
+                comment = new Comment(101, 'bla bla bla bla bla', 2, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+
+                comment = new Comment(101, 'bla bla bla bla bla', 3, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
+                this.addCommentToPostBee(comment);
+
+                comment = new Comment(101, 'bla bla bla bla bla', 4, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
                 this.addCommentToPostBee(comment);
 
                 commentsData.map(commentData => {
@@ -177,7 +203,7 @@ class DataManager {
 
                 todos = new Todos(0, 'Cocinar', 3, true);
                 this.addTodosToBee(todos);
-                
+
                 todos = new Todos(0, 'Estudiar', 4, false);
                 this.addTodosToBee(todos);
 
