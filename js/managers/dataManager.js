@@ -149,8 +149,16 @@ class DataManager {
 
             if (bee.id === post.userId) {
                 bee.posts.push(post);
+                break;
             };
         };
     };
+
+    addCommentsToBeePost(comment){
+        for (let i = 0; i < this.bees.lenght; i++) {
+            const bee = this.bees[i];
+            
+        };
+    }
 
 };
