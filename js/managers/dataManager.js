@@ -4,7 +4,7 @@ class DataManager {
     constructor(pAppManager) {
         this.appManager = pAppManager;
         this.url = 'https://jsonplaceholder.typicode.com/';
-        this.users = [];
+        this.bees = [];
 
         this.getData();
     };
@@ -39,7 +39,7 @@ class DataManager {
         const request = this.createRequest('todos', this.getTodosCallback);
     };
 
-    createRequest(value, callback){
+    createRequest(value, callback) {
         let request = new XMLHttpRequest();
         request.open('GET', this.url + value, true);
         request.onreadystatechange = callback.bind(this);
@@ -51,15 +51,31 @@ class DataManager {
     getUsersCallback(e) {
         let request = e.target;
 
-        if (request.readyState === XMLHttpRequest.DONE){
-            if (request.status === 200){
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
                 const data = JSON.parse(request.response);
                 //console.log(data);
 
+                //Datos Quemados
+                let company = new Company('Si no vivimos como pensamos, pronto empezaremos a pensar como vivimos', 'A trabajar carajo xD', 'Entrepreneur');
+                let geo = new Geo(0, 0);
+                let address = new Address('San José', geo, 'Calle 43', '1000', '10803');
+                let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@gmail.com', address, '71341350', 'https://github.com/AndresEliasVargas', company);
+                this.bees.push(bee);
+
                 data.map(userData => {
-                    let bee = new Bee(userData.id, userData.name, userData.username, userData.email, userData.address, userData.phone, userData.website, userData.company);
-                    console.log(bee);
+                    company = new Company(userData.company.bs, userData.company.catchPhrase, userData.company.name);
+                    geo = new Geo(userData.address.geo.lat, userData.address.geo.lng);
+                    address = new Address(userData.address.city, geo, userData.address.street, userData.address.suite, userData.address.zipcode);
+                    bee = new Bee(userData.id, userData.name, userData.username, userData.email, address, userData.phone, userData.website, company);
+
+                    this.bees.push(bee);
                 });
+
+                //Parse All
+                this.getPosts();
+
+                console.log(this.bees);
             };
         };
     };
@@ -67,10 +83,10 @@ class DataManager {
     getPostsCallback(e) {
         let request = e.target;
 
-        if (request.readyState === XMLHttpRequest.DONE){
-            if (request.status === 200){
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
                 const data = JSON.parse(request.response);
-                //console.log(data);
+                console.log(data);
             };
         };
     };
@@ -78,10 +94,10 @@ class DataManager {
     getComentsCallback(e) {
         let request = e.target;
 
-        if (request.readyState === XMLHttpRequest.DONE){
-            if (request.status === 200){
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
                 const data = JSON.parse(request.response);
-                //console.log(data);
+                console.log(data);
             };
         };
     };
@@ -89,10 +105,10 @@ class DataManager {
     getAlbumsCallback(e) {
         let request = e.target;
 
-        if (request.readyState === XMLHttpRequest.DONE){
-            if (request.status === 200){
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
                 const data = JSON.parse(request.response);
-                //console.log(data);
+                console.log(data);
             };
         };
     };
@@ -100,10 +116,10 @@ class DataManager {
     getPhotosCallback(e) {
         let request = e.target;
 
-        if (request.readyState === XMLHttpRequest.DONE){
-            if (request.status === 200){
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
                 const data = JSON.parse(request.response);
-                //console.log(data);
+                console.log(data);
             };
         };
     };
@@ -111,21 +127,21 @@ class DataManager {
     getTodosCallback(e) {
         let request = e.target;
 
-        if (request.readyState === XMLHttpRequest.DONE){
-            if (request.status === 200){
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
                 const data = JSON.parse(request.response);
-                //console.log(data);
+                console.log(data);
             };
         };
     };
 
     //Compare
     setUserPost(post) {
-		this.users.map(user => {
-			if (user.id === post.userid) {
-				//add post to user
-			}
-		});
-	}
+        this.users.map(user => {
+            if (user.id === post.userid) {
+                //add post to user
+            }
+        });
+    }
 
 };
