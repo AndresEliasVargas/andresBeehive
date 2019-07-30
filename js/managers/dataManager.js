@@ -67,8 +67,9 @@ class DataManager {
                     bee = new Bee(userData.id, userData.name, userData.username, userData.email, address, userData.phone, userData.website, company);
                     this.bees.push(bee);
                 });
+
                 this.getPosts();
-                //this.getAlbums();
+                this.getAlbums();
                 //this.getPhotos();
                 //this.getTodos();
 
@@ -116,7 +117,6 @@ class DataManager {
 
                     let comment = new Comment(commentData.postId, commentData.name, commentData.id, commentData.email, commentData.body);
                     this.addCommentToPostBee(comment);
-
                 });
             };
         };
@@ -140,11 +140,26 @@ class DataManager {
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                const data = JSON.parse(request.response);
-                console.log(data);
+                const albumsData = JSON.parse(request.response);
+                
+                albumsData.map(album => {
+                    //console.log(album);
+                    let album = new Album(album.id, album.title, album.userId);
+                    this.addPhotosToBee(album);
+                });
             };
         };
     };
+
+    addPhotosToBee(album){
+        for (let i = 0; i < this.bees.length; i++) {
+            const bee = this.bees[i];
+            if (bee.id === album.userId) {
+                bee.posts.push(album);
+                break;
+            };
+        };
+    }
 
     getPhotosCallback(e) {
         let request = e.target;
