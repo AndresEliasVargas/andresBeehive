@@ -1,8 +1,8 @@
-:root{
-    //Fonts
-    --aBeeZee: 'ABeeZee';
-    --roboto: 'Roboto';
-
-    //Colors
+html{
+    min-width: $width-320;
     
+}
+
+body{
+    background-color: $white;
 }

@@ -1,3 +1,5 @@
-:root {
-  --aBeeZee: 'ABeeZee';
-  --roboto: 'Roboto'; }
+html {
+  min-width: 320px; }
+
+body {
+  background-color: #ffffff; }
