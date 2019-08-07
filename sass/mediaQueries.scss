@@ -1,15 +1,26 @@
-@media all and (min-width: $width-375){
-
+@media all and (min-width: $width-375) {
 }
 
-@media all and (min-width: $width-420){
-
+@media all and (min-width: $width-420) {
+  #headerComponent {
+    padding: 4.76% 0; //20px 0
+  }
 }
 
-@media all and (min-width: $width-768){
-
+@media all and (min-width: $width-768) {
 }
 
-@media all and (min-width: $width-1024){
+@media all and (min-width: $width-1024) {
+  #headerComponent {
+    padding: 2.76% 0; //18px 0
+  }
 
+  #headerComponent h1 {
+    font-size: 36px; //30px
+    line-height: 40px; //34px
+  }
+}
+
+@media all and (min-width: $width-1440) {
+  
 }

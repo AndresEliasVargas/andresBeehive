@@ -1,5 +1,32 @@
 html {
-  min-width: 320px; }
+  min-width: 320px;
+  font-size: 16px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif; }
 
 body {
+  width: 100%;
   background-color: #ffffff; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ABeeZee", "Arial Black", Gadget, sans-serif;
+  text-align: center; }
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 2.125rem; }
+
+#headerComponent {
+  background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
+  color: #ffffff;
+  padding: 7.81% 0; }
+
+@media all and (min-width: 420px) {
+  #headerComponent {
+    padding: 4.76% 0; } }
+
+@media all and (min-width: 1024px) {
+  #headerComponent {
+    padding: 2.76% 0; }
+  #headerComponent h1 {
+    font-size: 36px;
+    line-height: 40px; } }

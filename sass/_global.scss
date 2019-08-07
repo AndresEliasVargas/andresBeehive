@@ -1,8 +1,20 @@
 html{
     min-width: $width-320;
-    
+    font-size: 16px;
+    font-family: $roboto, Arial, Helvetica, sans-serif;
 }
 
 body{
+    width: 100%;
     background-color: $white;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $a-Bee-Zee, "Arial Black", Gadget, sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 1.875rem; //30px
+    line-height: 2.125rem; //34px
 }
