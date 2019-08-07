@@ -23,7 +23,7 @@ class DataManager {
     };
 
     getComments() {
-        const request = this.createRequest('comments', this.getComentsCallback);
+        const request = this.createRequest('comments', this.getCommentsCallback);
     };
 
     getAlbums() {
@@ -62,7 +62,7 @@ class DataManager {
                 let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@mail.com', address, '71341350', 'https://github.com/AndresEliasVargas', company);
                 this.bees.push(bee);
 
-                data.forEach(userData => {
+                data.map(userData => {
                     geo = new Geo(userData.address.geo.lat, userData.address.geo.lng);
                     address = new Address(userData.address.city, geo, userData.address.street, userData.address.suite, userData.address.zipcode);
                     company = new Company(userData.company.bs, userData.company.catchPhrase, userData.company.name);
@@ -71,8 +71,6 @@ class DataManager {
                 });
 
                 this.getPosts();
-                this.getAlbums();
-                this.getTodos();
 
                 console.log(this.bees);
             };
@@ -95,7 +93,7 @@ class DataManager {
                 post = new Post(101, 0, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores velit perspiciatis esse eveniet alias enim, totam voluptas recusandae numquam tempora libero molestiae aliquid nesciunt. Tempore enim dolor eligendi tempora architecto!', 'Lorem Ipsum');
                 this.addPostToBee(post);
 
-                postsData.forEach(postData => {
+                postsData.map(postData => {
                     post = new Post(postData.id, postData.userId, postData.body, postData.title);
                     this.addPostToBee(post);
                 });
@@ -105,7 +103,7 @@ class DataManager {
         };
     };
 
-    getComentsCallback(e) {
+    getCommentsCallback(e) {
         let request = e.target;
 
         if (request.readyState === XMLHttpRequest.DONE) {
@@ -145,6 +143,7 @@ class DataManager {
                     this.addCommentToPostBee(comment);
                 });
             };
+            this.getAlbums();
         };
     };
 
@@ -187,6 +186,7 @@ class DataManager {
                     this.addPhotosToAlbum(photos);
                 });
             };
+            this.getTodos();
         };
     };
 
@@ -217,6 +217,7 @@ class DataManager {
                     this.addTodosToBee(todos);
                 });
             };
+            this.appManager.completeDownload();
         };
     };
 
