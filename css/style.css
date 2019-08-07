@@ -19,6 +19,15 @@ h1 {
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
   color: #ffffff;
   padding: 7.81% 0; }
+  #headerComponent h1 {
+    width: 64%;
+    text-align: right;
+    display: inline-block;
+    margin-right: 10px; }
+  #headerComponent div {
+    width: 35%;
+    display: inline-block;
+    position: absolute; }
 
 @media all and (min-width: 420px) {
   #headerComponent {

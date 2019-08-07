@@ -8,7 +8,13 @@ class HeaderComponent{
         this.title = document.createElement('h1');
         this.title.innerHTML = 'Beehive';
 
-        this.header.appendChild(this.title);
+        this.div = document.createElement('div');
+
+        this.img = document.createElement('img');
+        this.img.setAttribute('src', 'https://img.icons8.com/officel/40/000000/bee.png');
+        
+        this.div.appendChild(this.img);
+        this.header.append(this.title, this.div);
 
         this.mainComponent = new MainComponent();
     };
