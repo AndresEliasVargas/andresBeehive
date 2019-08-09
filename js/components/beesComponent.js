@@ -1,9 +1,12 @@
 'use strict';
 
 class BeesComponent{
-    constructor(){
-        this.beesElement = document.createElement('div');
+    constructor(pMain){
+        this.main = pMain;
+        this.beesElement = document.createElement('section');
         this.beesElement.setAttribute('id', 'beesComponent');
+
+        pMain.prepend(this.beesElement);
     }
 
     showBees(bees, pAppManager){

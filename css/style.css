@@ -1,19 +1,29 @@
 html {
   min-width: 320px;
   font-size: 16px;
-  font-family: "Roboto", Arial, Helvetica, sans-serif; }
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  text-align: justify; }
 
 body {
   width: 100%;
   background-color: #ffffff; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "ABeeZee", "Arial Black", Gadget, sans-serif;
-  text-align: center; }
+  font-family: "ABeeZee", "Arial Black", Gadget, sans-serif; }
 
 h1 {
   font-size: 1.875rem;
-  line-height: 2.125rem; }
+  line-height: 2.125rem;
+  text-align: center; }
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.875rem;
+  text-align: center; }
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.75rem; }
 
 #headerComponent {
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);

@@ -71,8 +71,6 @@ class DataManager {
                 });
 
                 this.getPosts();
-
-                console.log(this.bees);
             };
         };
     };
