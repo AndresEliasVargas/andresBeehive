@@ -5,6 +5,9 @@ class MainComponent{
         this.main = document.createElement('main');
         this.main.setAttribute('id', 'mainComponent');
         this.beesComponent = new BeesComponent(this.main, this);
+        this.postsComponent = new PostsComponent(this.main, this);
+        // this.albumsComponent = new AlbumsComponent(this.main, this);
+        // this.todosComponent = new TodosComponent(this.main, this);
     };
 
     showMain(pDiv, pAppManager){
@@ -12,15 +15,24 @@ class MainComponent{
         this.beesComponent.showBees(pAppManager.appManager.dataManager.bees, pAppManager);
     };
 
-    showBeePosts(){
-        console.log('posts');
+    showBeePosts(bee){
+        this.postsComponent.showBeePostsComponent(bee);
+        this.postsComponent.show();
+        // this.albumsComponent.hide();
+        // this.todosComponent.hide();
     };
 
     showBeeAlbums(){
-        console.log('albums');
+        // this.todosComponent.showBeeAlbumsComponent(bee);
+        this.postsComponent.hide();
+        // this.albumsComponent.show();
+        // this.todosComponent.hide();
     };
 
     showBeeTodos(){
-        console.log('todos');
+        // this.todosComponent.showBeeTodosComponent(bee);
+        this.postsComponent.hide();
+        // this.albumsComponent.hide();
+        // this.todosComponent.show();
     };
 };

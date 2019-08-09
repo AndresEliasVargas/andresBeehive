@@ -4,7 +4,7 @@ class BeeComponent{
     constructor(pModel, pParent, pUIManager){
         this.model = pModel;
         this.parent = pParent;
-        this.uiManager = pUIManager;
+        this.uiManager = pUIManager; //mainComponent
 
         //Contenedor de los Bees
         this.beeContainer = document.createElement('div');

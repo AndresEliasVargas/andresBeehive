@@ -25,17 +25,26 @@ h3 {
   font-size: 1.5rem;
   line-height: 1.75rem; }
 
+main {
+  display: flow-root; }
+  main section:first-child {
+    width: 40%;
+    float: left; }
+  main section:nth-child(2) {
+    width: 60%;
+    float: right; }
+
 #headerComponent {
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
   color: #ffffff;
   padding: 7.81% 0; }
   #headerComponent h1 {
-    width: 60%;
+    width: 55%;
     text-align: right;
     display: inline-block;
     margin-right: 5%; }
   #headerComponent div {
-    width: 40%;
+    width: 30%;
     display: inline-block;
     position: absolute; }
 
@@ -43,7 +52,7 @@ h3 {
   #headerComponent h1 {
     width: 57%; }
   #headerComponent div {
-    width: 43%; } }
+    width: 30%; } }
 
 @media all and (min-width: 420px) {
   #headerComponent {
@@ -51,14 +60,14 @@ h3 {
     #headerComponent h1 {
       width: 55%; }
     #headerComponent div {
-      width: 45%; } }
+      width: 30%; } }
 
 @media all and (min-width: 768px) {
   #headerComponent h1 {
     width: 50%;
     margin-right: 3%; }
   #headerComponent div {
-    width: 50%; } }
+    width: 30%; } }
 
 @media all and (min-width: 1024px) {
   #headerComponent {
@@ -66,4 +75,6 @@ h3 {
     #headerComponent h1 {
       font-size: 2.25rem;
       line-height: 2.5rem;
-      margin-right: 1%; } }
+      margin-right: 1%; }
+    #headerComponent div {
+      width: 30%; } }
