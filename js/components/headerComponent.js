@@ -1,7 +1,8 @@
 'use strict';
 
 class HeaderComponent{
-    constructor(){
+    constructor(pAppManager){
+        this.appManager = pAppManager;
         this.header = document.createElement('header');
         this.header.setAttribute('id', 'headerComponent');
 
@@ -16,7 +17,7 @@ class HeaderComponent{
         this.div.appendChild(this.img);
         this.header.append(this.title, this.div);
 
-        this.mainComponent = new MainComponent();
+        this.mainComponent = new MainComponent(this.appManager);
     };
 
     showTitle(pDiv, pAppManager){

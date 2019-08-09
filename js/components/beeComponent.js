@@ -1,10 +1,10 @@
 'use strict';
 
 class BeeComponent{
-    constructor(pModel, pParent, pAppManager){
+    constructor(pModel, pParent, pUIManager){
         this.model = pModel;
         this.parent = pParent;
-        this.appManger = pAppManager;
+        this.uiManager = pUIManager;
 
         //Contenedor de los Bees
         this.beeContainer = document.createElement('div');
@@ -99,18 +99,18 @@ class BeeComponent{
 
     };
 
-    onBtnPostClick(e){
-        console.log('Post');
+    onBtnPostClick(){
         window.scrollTo(0, 0);
+        this.uiManager.showBeePosts(this.model);
     };
 
-    onBtnAlbumClick(e){
-        console.log('Album');
+    onBtnAlbumClick(){
         window.scrollTo(0, 0);
+        this.uiManager.showBeeAlbums(this.model);
     };
 
-    onBtnTodosClick(e){
-        console.log('Todos');
+    onBtnTodosClick(){
         window.scrollTo(0, 0);
+        this.uiManager.showBeeTodos(this.model);
     };
 };

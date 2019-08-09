@@ -6,7 +6,7 @@ class AppComponent{
         this.div = document.createElement('div');
         this.div.setAttribute('id', 'appComponent');
 
-        this.headerComponent = new HeaderComponent();
+        this.headerComponent = new HeaderComponent(this.appManager);
     };
 
     addPrincipalElement(pBody){
