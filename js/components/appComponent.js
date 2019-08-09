@@ -11,6 +11,6 @@ class AppComponent{
 
     addPrincipalElement(pBody){
         pBody.prepend(this.div);
-        this.headerComponent.showTitle(this.div);
+        this.headerComponent.showTitle(this.div, this.appManager);
     };
 };

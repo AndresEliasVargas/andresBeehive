@@ -19,8 +19,8 @@ class HeaderComponent{
         this.mainComponent = new MainComponent();
     };
 
-    showTitle(pDiv){
+    showTitle(pDiv, pAppManager){
         pDiv.prepend(this.header);
-        this.mainComponent.showMain(pDiv);
+        this.mainComponent.showMain(pDiv, pAppManager);
     };
 };

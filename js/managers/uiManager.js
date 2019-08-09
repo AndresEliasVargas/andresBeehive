@@ -1,6 +1,6 @@
 'use strict';
 
-class UiManager{
+class UIManager{
     constructor(pAppManager){
         this.appManager = pAppManager;
         this.body = document.getElementsByTagName('body')[0];
@@ -8,6 +8,6 @@ class UiManager{
     }
 
     showUI(){
-        this.appComponent.addPrincipalElement(this.body);
+        this.appComponent.addPrincipalElement(this.body, this.appManager);
     }
 };

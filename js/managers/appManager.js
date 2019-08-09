@@ -3,7 +3,7 @@
 class AppManager{
     constructor(){
         this.dataManager = new DataManager(this);
-        this.uiManager = new UiManager(this);
+        this.uiManager = new UIManager(this);
     }
 
     completeDownload(){
