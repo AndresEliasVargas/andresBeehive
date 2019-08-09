@@ -10,3 +10,8 @@ Final Project of Programación Web Dinámica. Professor: Esteban Padilla.
 
 **Framework**
 >FontAwesome
+
+**Google** **Fonts**
+>ABeeZee - Open Font License || https://fonts.google.com/specimen/ABeeZee
+
+>Roboto - Apache License, Version 2.0 || https://fonts.google.com/specimen/Roboto
