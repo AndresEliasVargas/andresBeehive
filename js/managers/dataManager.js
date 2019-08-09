@@ -59,7 +59,7 @@ class DataManager {
                 let geo = new Geo(0, 0);
                 let address = new Address('San José', geo, 'Calle 43', '3035', '10803');
                 let company = new Company('​Si no vivimos como pensamos, pronto empezaremos a pensar como vivimos.', 'A trabajar carajo xD', 'Entrepreneur');
-                let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@mail.com', address, '71341350', 'https://github.com/AndresEliasVargas', company);
+                let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@gmail.com', address, '506-7134-1350', 'https://github.com/AndresEliasVargas', company);
                 this.bees.push(bee);
 
                 data.map(userData => {
