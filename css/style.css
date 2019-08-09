@@ -20,22 +20,40 @@ h1 {
   color: #ffffff;
   padding: 7.81% 0; }
   #headerComponent h1 {
-    width: 64%;
+    width: 60%;
     text-align: right;
     display: inline-block;
-    margin-right: 10px; }
+    margin-right: 5%; }
   #headerComponent div {
-    width: 35%;
+    width: 40%;
     display: inline-block;
     position: absolute; }
 
+@media all and (min-width: 375px) {
+  #headerComponent h1 {
+    width: 57%; }
+  #headerComponent div {
+    width: 43%; } }
+
 @media all and (min-width: 420px) {
   #headerComponent {
-    padding: 4.76% 0; } }
+    padding: 4.76% 0; }
+    #headerComponent h1 {
+      width: 55%; }
+    #headerComponent div {
+      width: 45%; } }
+
+@media all and (min-width: 768px) {
+  #headerComponent h1 {
+    width: 50%;
+    margin-right: 3%; }
+  #headerComponent div {
+    width: 50%; } }
 
 @media all and (min-width: 1024px) {
   #headerComponent {
     padding: 2.76% 0; }
-  #headerComponent h1 {
-    font-size: 36px;
-    line-height: 40px; } }
+    #headerComponent h1 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      margin-right: 1%; } }
