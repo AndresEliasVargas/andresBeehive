@@ -6,7 +6,7 @@ class MainComponent{
         this.main.setAttribute('id', 'mainComponent');
         this.beesComponent = new BeesComponent(this.main, this);
         this.postsComponent = new PostsComponent(this.main, this);
-        // this.albumsComponent = new AlbumsComponent(this.main, this);
+        this.albumsComponent = new AlbumsComponent(this.main, this);
         // this.todosComponent = new TodosComponent(this.main, this);
     };
 
@@ -22,14 +22,14 @@ class MainComponent{
         // this.todosComponent.hide();
     };
 
-    showBeeAlbums(){
-        // this.todosComponent.showBeeAlbumsComponent(bee);
+    showBeeAlbums(bee){
+        this.albumsComponent.showBeeAlbumsComponent(bee);
         this.postsComponent.hide();
         // this.albumsComponent.show();
         // this.todosComponent.hide();
     };
 
-    showBeeTodos(){
+    showBeeTodos(bee){
         // this.todosComponent.showBeeTodosComponent(bee);
         this.postsComponent.hide();
         // this.albumsComponent.hide();

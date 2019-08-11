@@ -47,13 +47,15 @@ class BeeComponent{
         //Website
         this.website = document.createElement('p');
         this.link = document.createElement('a');
+        this.linkTitle = document.createElement('b');
 
         this.url = this.model.website;
 
+        this.linkTitle.innerHTML = 'Website: ';
         this.link.innerHTML = this.url;
         this.link.setAttribute('href', this.url);
         this.link.setAttribute('target', '_blank');
-        this.website.appendChild(this.link);
+        this.website.append(this.linkTitle, this.link);
 
         //Button Container
         this.buttonsContainer = document.createElement('div');
