@@ -11,14 +11,8 @@ class AlbumComponent {
 
         this.title = document.createElement('h2');
         this.title.innerHTML = this.model.title;
-
         
         this.parent.appendChild(this.container);
-
-        this.container.append(
-            this.title
-        );
-
-        console.log(this.model);
+        this.container.appendChild(this.title);
     }
 };
