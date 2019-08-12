@@ -7,7 +7,7 @@ class MainComponent{
         this.beesComponent = new BeesComponent(this.main, this);
         this.postsComponent = new PostsComponent(this.main, this);
         this.albumsComponent = new AlbumsComponent(this.main, this);
-        // this.todosComponent = new TodosComponent(this.main, this);
+        this.todosComponent = new TodosComponent(this.main, this);
     };
 
     showMain(pDiv, pAppManager){

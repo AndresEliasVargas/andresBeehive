@@ -1,12 +1,20 @@
 'use strict';
 
 class TodosComponent {
-    constructor(pUIManager) {
+    constructor(pMain, pUIManager) {
+        this.main = pMain;
         this.uiManager = pUIManager;
-        this.container = document.getElementById('todosComponent');
+        
+        this.container = document.createElement('section');
+        this.container.setAttribute('id', 'todosComponent');
+        this.container.hidden = true;
+
+        this.main.appendChild(
+            this.container
+        );
     }
 
-    showBeeTodos(bee) {
+    showBeeTodosComponent(bee) {
         this.container.innerHTML = '';
         bee.todos.map(todo => new TodoComponent(
             todo,
@@ -21,6 +29,7 @@ class TodosComponent {
     }
 
     hide() {
+        this.container.innerHTML = '';
         this.container.hidden = true;
     }
 }
