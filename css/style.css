@@ -32,7 +32,8 @@ main {
     float: left; }
   main section:nth-child(2) {
     width: 60%;
-    float: right; }
+    float: left;
+    margin-top: 2%; }
 
 #headerComponent {
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
@@ -49,17 +50,32 @@ main {
     position: absolute; }
 
 .beeComponent {
-  width: 50%;
+  width: 85%;
   margin: 5% auto;
   padding: 10px 20px;
   border: 1px solid #000;
-  border-radius: 10%; }
-  .beeComponent h3 {
-    margin-bottom: 5%; }
-  .beeComponent p {
-    margin-bottom: 2%; }
-    .beeComponent p b {
-      font-weight: 700; }
+  border-radius: 5%;
+  display: flow-root; }
+  .beeComponent #beeImgContainer {
+    width: 40%;
+    float: left; }
+    .beeComponent #beeImgContainer img {
+      width: 80%;
+      margin-top: 2%;
+      padding: 2% 0; }
+  .beeComponent #beeContainerData {
+    width: 60%;
+    float: left; }
+    .beeComponent #beeContainerData h3 {
+      margin-bottom: 5%; }
+    .beeComponent #beeContainerData p {
+      margin-bottom: 2%; }
+      .beeComponent #beeContainerData p b {
+        font-weight: 700; }
+
+#postsComponent {
+  width: 56%;
+  padding: 0 1.56%; }
 
 @media all and (min-width: 375px) {
   #headerComponent h1 {

@@ -10,6 +10,17 @@ class BeeComponent{
         this.beeContainer = document.createElement('div');
         this.beeContainer.classList.add('beeComponent');
 
+        //contenedor de fotos y bee
+        this.beeImgContainer = document.createElement('div');
+        this.beeImgContainer.setAttribute('id', 'beeImgContainer');
+
+        this.beeContainerData = document.createElement('div');
+        this.beeContainerData.setAttribute('id', 'beeContainerData'); 
+
+        //photo
+        this.img = document.createElement('img');
+        this.img.setAttribute('src', 'https://via.placeholder.com/150/92c952');
+
         //Nombre del Bee
         this.title = document.createElement('h3');
         this.title.innerHTML = this.model.name;
@@ -81,8 +92,17 @@ class BeeComponent{
         //Append Containers Bee to section BeesComponent
         this.parent.appendChild(this.beeContainer);
 
-        //Append data to BeeContainer
+        //Append div's
         this.beeContainer.append(
+            this.beeImgContainer,
+            this.beeContainerData
+        );
+
+        //Add photo
+        this.beeImgContainer.appendChild(this.img);
+
+        //Append data to beeContainerData
+        this.beeContainerData.append(
             this.title,
             this.username,
             this.email,
