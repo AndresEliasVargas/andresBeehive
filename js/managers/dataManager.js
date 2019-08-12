@@ -71,6 +71,7 @@ class DataManager {
                 });
 
                 this.getPosts();
+                
             };
         };
     };
@@ -226,7 +227,6 @@ class DataManager {
             const bee = this.bees[i];
             if (bee.id === post.userId) {
                 bee.posts.push(post);
-                break;
             };
         };
     };
@@ -238,7 +238,6 @@ class DataManager {
                 const post = bee.posts[j];
                 if (post.id === comment.postId) {
                     post.comments.push(comment);
-                    break;
                 };
             };
         };
@@ -249,7 +248,6 @@ class DataManager {
             const bee = this.bees[i];
             if (bee.id === album.userId) {
                 bee.albums.push(album);
-                break;
             };
         };
     }
@@ -261,7 +259,6 @@ class DataManager {
                 const album = bee.albums[j];
                 if (album.id === photo.albumId) {
                     album.photos.push(photo);
-                    break;
                 };
             };
         };
@@ -272,7 +269,6 @@ class DataManager {
             const bee = this.bees[i];
             if (bee.id === todo.userId) {
                 bee.todos.push(todo);
-                break;
             };
         };
     };

@@ -18,21 +18,21 @@ class MainComponent{
     showBeePosts(bee){
         this.postsComponent.showBeePostsComponent(bee);
         this.postsComponent.show();
-        // this.albumsComponent.hide();
-        // this.todosComponent.hide();
+        this.albumsComponent.hide();
+        this.todosComponent.hide();
     };
 
     showBeeAlbums(bee){
         this.albumsComponent.showBeeAlbumsComponent(bee);
         this.postsComponent.hide();
-        // this.albumsComponent.show();
-        // this.todosComponent.hide();
+        this.albumsComponent.show();
+        this.todosComponent.hide();
     };
 
     showBeeTodos(bee){
-        // this.todosComponent.showBeeTodosComponent(bee);
+        this.todosComponent.showBeeTodosComponent(bee);
         this.postsComponent.hide();
-        // this.albumsComponent.hide();
-        // this.todosComponent.show();
+        this.albumsComponent.hide();
+        this.todosComponent.show();
     };
 };

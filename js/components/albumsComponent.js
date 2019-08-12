@@ -22,6 +22,7 @@ class AlbumsComponent {
     };
 
     hide(){
+        this.container.innerHTML = '';
         this.container.hidden = true;
     };
 };

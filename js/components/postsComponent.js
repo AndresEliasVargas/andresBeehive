@@ -22,6 +22,7 @@ class PostsComponent {
     };
 
     hide(){
+        this.container.innerHTML = '';
         this.container.hidden = true;
     };
 };
