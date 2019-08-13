@@ -1,51 +1,56 @@
-html{
-    min-width: $width-320;
-    font-size: 16px;
-    font-family: $roboto, Arial, Helvetica, sans-serif;
-    text-align: justify;
+html {
+  min-width: $width-320;
+  font-size: 16px;
+  font-family: $roboto, Arial, Helvetica, sans-serif;
+  text-align: justify;
 }
 
-body{
-    width: 100%;
-    background-color: $white;
+body {
+  width: 100%;
+  background-color: $white;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: $a-Bee-Zee, "Arial Black", Gadget, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $a-Bee-Zee, "Arial Black", Gadget, sans-serif;
 }
 
-h1{
-    font-size: 1.875rem; //30px
-    line-height: 2.125rem; //34px
-    text-align: center;
+h1 {
+  font-size: 1.875rem; //30px
+  line-height: 2.125rem; //34px
+  text-align: center;
 }
 
-h2{
-    font-size: 1.75rem; //28px
-    line-height: 1.875rem; //30px
-    text-align: center;
+h2 {
+  font-size: 1.75rem; //28px
+  line-height: 1.875rem; //30px
+  text-align: center;
 }
 
-h3{
-    font-size: 1.5rem; //24px
-    line-height: 1.75rem; //28px
+h3 {
+  font-size: 1.5rem; //24px
+  line-height: 1.75rem; //28px
 }
 
-main{
-    display: flow-root;
-    
-    section:first-child{
-        width: 40%;
-        float: left;
-    }
+main {
+  display: flow-root;
 
-    section:nth-child(2){
-        width: 60%;
-        float: left;
-        margin-top: 2%;
-    };
+  section:first-child {
+    width: 40%;
+    float: left;
+  }
+
+  section:nth-child(2) {
+    width: 60%;
+    float: left;
+    margin-top: 2%;
+  }
 }
 
 b {
-    font-weight: 700;
+  font-weight: 700;
 }

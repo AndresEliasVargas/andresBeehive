@@ -1,6 +1,6 @@
 'use strict';
 
-class PhotoComponent{
+class PhotoComponent {
     constructor(pmodel, pparent, pUIManager) {
         this.uiManager = pUIManager;
         this.model = pmodel;
@@ -13,7 +13,7 @@ class PhotoComponent{
         this.title.classList.add('photoTitle');
         this.title.innerHTML = this.model.title;
 
-        let myImage = new Image(100, 100);
+        let myImage = new Image(150, 150);
         myImage.src = this.model.thumbnailUrl;
 
         this.parent.appendChild(this.container);
