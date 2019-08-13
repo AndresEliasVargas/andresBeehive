@@ -51,6 +51,11 @@
       width: 30%;
     }
   }
+
+  .beeComponent:hover{
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+  }
 }
 
 @media all and (min-width: $width-1440) {

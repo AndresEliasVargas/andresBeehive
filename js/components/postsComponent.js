@@ -9,6 +9,9 @@ class PostsComponent {
         this.container.setAttribute('id', 'postsComponent');
         this.container.hidden = true;
 
+        //this.titleName = document.createElement('h2');
+        //this.titleName.innerHTML = this.uiManager.appManager.bee.name;
+
         this.main.appendChild(this.container);
     }
 

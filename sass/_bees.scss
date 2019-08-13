@@ -1,9 +1,8 @@
 .beeComponent {
   width: 85%;
   margin: 5% auto;
-  padding: 10px 20px;
-  border: 1px solid $black;
-  border-radius: 5%;
+  padding: 3.1% 6.25%; //10px 20px
+  border-radius: 20px;
   display: flow-root;
 
   #beeImgContainer{
@@ -26,9 +25,6 @@
 
     p {
       margin-bottom: 2%;
-      b {
-        font-weight: 700;
-      }
     }
   }
 }

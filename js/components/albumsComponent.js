@@ -14,7 +14,12 @@ class AlbumsComponent {
 
     showBeeAlbumsComponent(bee) {
         this.container.innerHTML = '';
-        bee.albums.map(album => new AlbumComponent(album, this.container, this.uiManager));
+        bee.albums.map(album => new AlbumComponent(
+            album,
+            this.container,
+            this.uiManager
+            )
+        );
     };
 
     show(){

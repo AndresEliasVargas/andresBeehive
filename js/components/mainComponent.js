@@ -8,6 +8,7 @@ class MainComponent{
         this.postsComponent = new PostsComponent(this.main, this);
         this.albumsComponent = new AlbumsComponent(this.main, this);
         this.todosComponent = new TodosComponent(this.main, this);
+        // this.newCommentComponent = new NewCommentComponent(this.main, this);
     };
 
     showMain(pDiv, pAppManager){
@@ -20,6 +21,7 @@ class MainComponent{
         this.postsComponent.show();
         this.albumsComponent.hide();
         this.todosComponent.hide();
+        // this.newCommentComponent.hide();
     };
 
     showBeeAlbums(bee){
@@ -27,6 +29,7 @@ class MainComponent{
         this.postsComponent.hide();
         this.albumsComponent.show();
         this.todosComponent.hide();
+        // this.newCommentComponent.hide();
     };
 
     showBeeTodos(bee){
@@ -34,5 +37,6 @@ class MainComponent{
         this.postsComponent.hide();
         this.albumsComponent.hide();
         this.todosComponent.show();
+        // this.newCommentComponent.hide();
     };
 };

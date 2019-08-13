@@ -35,6 +35,9 @@ main {
     float: left;
     margin-top: 2%; }
 
+b {
+  font-weight: 700; }
+
 #headerComponent {
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
   color: #FFF;
@@ -52,9 +55,8 @@ main {
 .beeComponent {
   width: 85%;
   margin: 5% auto;
-  padding: 10px 20px;
-  border: 1px solid #000;
-  border-radius: 5%;
+  padding: 3.1% 6.25%;
+  border-radius: 20px;
   display: flow-root; }
   .beeComponent #beeImgContainer {
     width: 40%;
@@ -70,8 +72,6 @@ main {
       margin-bottom: 5%; }
     .beeComponent #beeContainerData p {
       margin-bottom: 2%; }
-      .beeComponent #beeContainerData p b {
-        font-weight: 700; }
 
 #postsComponent {
   width: 56%;
@@ -106,4 +106,7 @@ main {
       line-height: 2.5rem;
       margin-right: 1%; }
     #headerComponent div {
-      width: 30%; } }
+      width: 30%; }
+  .beeComponent:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px; } }

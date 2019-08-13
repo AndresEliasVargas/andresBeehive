@@ -15,11 +15,32 @@ class PostComponent {
         this.body = document.createElement('p');
         this.body.innerHTML = this.model.body;
 
+        this.btn = document.createElement('button');
+        this.btn.innerHTML = 'Add New Component';
+        this.btn.classList.add('btnNewComponent');
+        this.btn.onclick = this.addNewComment.bind(this);
+
         this.parent.appendChild(this.container);
 
         this.container.append(
             this.title,
-            this.body
+            this.body,
+            this.btn
+        );
+
+        this.addCommentComponents();
+    }
+
+    addNewComment(e){
+
+    }
+
+    addCommentComponents() {
+        this.model.comments.map(comment => new CommentComponent(
+            comment,
+            this.container,
+            this.uiManager
+            )
         );
     }
 };

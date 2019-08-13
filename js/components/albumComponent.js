@@ -14,5 +14,12 @@ class AlbumComponent {
         
         this.parent.appendChild(this.container);
         this.container.appendChild(this.title);
+
+        this.model.photos.map(photo => new PhotoComponent(
+            photo,
+            this.container,
+            this.uiManager
+            )
+        );
     }
 };
