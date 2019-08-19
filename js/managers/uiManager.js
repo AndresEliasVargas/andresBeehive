@@ -8,6 +8,6 @@ class UIManager{
     }
 
     showUI(){
-        this.appComponent.addPrincipalElement(this.body, this.appManager);
+        this.appComponent.addPrincipalElement(this.body);
     }
 };
