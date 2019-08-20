@@ -28,19 +28,19 @@ class BeeComponent{
         //Username
         this.username = document.createElement('p');
         this.username.innerHTML = 
-            '<b>Username: </b>' + 
+            '<b>Username</b> ' + 
             this.model.username;
 
         //Email
         this.email = document.createElement('p');
         this.email.innerHTML = 
-            '<b>Email: </b>' + 
-            this.model.email;
+            '<b>Email</b><br>' + 
+            '<a target="_blank" href="mailto:' + this.model.email + '">' + this.model.email + '</a>';
 
         //Address
         this.address = document.createElement('p');
         this.address.innerHTML = 
-            '<b>Address: </b>' +
+            '<b>Address</b><br>' +
             this.model.address.suite +
             ', ' +
             this.model.address.street +
@@ -52,7 +52,7 @@ class BeeComponent{
         //Phone
         this.phone = document.createElement('p');
         this.phone.innerHTML =
-            '<b>Phone: </b>' +
+            '<b>Phone</b><br>' +
             this.model.phone;
         
         //Website
@@ -62,7 +62,7 @@ class BeeComponent{
 
         this.url = this.model.website;
 
-        this.linkTitle.innerHTML = 'Website: ';
+        this.linkTitle.innerHTML = 'Website<br>';
         this.link.innerHTML = this.url;
         this.link.setAttribute('href', this.url);
         this.link.setAttribute('target', '_blank');

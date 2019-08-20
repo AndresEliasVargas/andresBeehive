@@ -1,10 +1,10 @@
 @media all and (min-width: $width-375) {
-  #headerComponent{
-    h1{
+  #headerComponent {
+    h1 {
       width: 57%;
     }
-  
-    div{
+
+    div {
       width: 30%;
     }
   }
@@ -14,11 +14,11 @@
   #headerComponent {
     padding: 4.76% 0; //20px 0
 
-    h1{
+    h1 {
       width: 55%;
     }
-  
-    div{
+
+    div {
       width: 30%;
     }
   }
@@ -26,12 +26,12 @@
 
 @media all and (min-width: $width-768) {
   #headerComponent {
-    h1{
+    h1 {
       width: 50%;
       margin-right: 3%;
     }
-  
-    div{
+
+    div {
       width: 30%;
     }
   }
@@ -47,17 +47,15 @@
       margin-right: 1%;
     }
 
-    div{
+    div {
       width: 30%;
     }
   }
 
-  .beeComponent:hover{
-    background-color: rgba(0,0,0,0.3);
+  .beeComponent:hover {
+    background-color: #f7f7f7;
     border-radius: 10px;
   }
 }
 
-@media all and (min-width: $width-1440) {
-  
-}
+@media all and (min-width: $width-1440) {}
