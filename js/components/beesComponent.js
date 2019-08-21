@@ -6,6 +6,9 @@ class BeesComponent{
         this.uiManager = pUIManager;
         this.beesElement = document.createElement('section');
         this.beesElement.setAttribute('id', 'beesComponent');
+        this.beesElement.classList.add(
+            'col-6'
+        );
 
         pMain.prepend(this.beesElement);
     }

@@ -7,6 +7,9 @@ class AlbumsComponent {
 
         this.container = document.createElement('section');
         this.container.setAttribute('id', 'albumsComponent');
+        this.container.classList.add(
+            'col-6'
+        );
         this.container.hidden = true;
 
         this.main.appendChild(this.container);

@@ -1,122 +1,16 @@
 html {
-  min-width: 320px;
-  font-size: 16px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  text-align: justify; }
+}
 
 body {
-  width: 100%;
   height: 100vh;
-  background-color: #FFF; }
+}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "ABeeZee", "Arial Black", Gadget, sans-serif; }
-
-h1 {
-  font-size: 1.875rem;
-  line-height: 2.125rem;
-  text-align: center; }
-
-h2 {
-  font-size: 1.75rem;
-  line-height: 1.875rem;
-  text-align: center; }
-
-h3 {
-  font-size: 1.5rem;
-  line-height: 1.75rem; }
-
-main {
-  display: flow-root; }
-  main section:first-child {
-    width: 40%;
-    float: left; }
-  main section:nth-child(2) {
-    width: 60%;
-    float: left;
-    margin-top: 2%; }
-
-b {
-  font-weight: 700; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ABeeZee", "Arial Black", Gadget, sans-serif;
+}
 
 #headerComponent {
-  height: 5vh;
+  height: 15vh;
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
-  color: #FFF;
-  padding: 7.81% 0; }
-  #headerComponent h1 {
-    width: 55%;
-    text-align: right;
-    display: inline-block;
-    margin-right: 5%; }
-  #headerComponent div {
-    width: 30%;
-    display: inline-block;
-    position: absolute; }
-
-#beesComponent {
-  overflow-y: scroll;
-  height: 95vh; }
-  #beesComponent .beeComponent {
-    width: 85%;
-    margin: 5% auto;
-    padding: 3.1% 6.25% 3.1% 3.25%;
-    border-radius: 20px;
-    display: flow-root; }
-    #beesComponent .beeComponent #beeImgContainer {
-      width: 30%;
-      float: left; }
-      #beesComponent .beeComponent #beeImgContainer img {
-        width: 90%;
-        margin-top: 2%;
-        padding: 2% 0; }
-    #beesComponent .beeComponent #beeContainerData {
-      width: 60%;
-      float: left; }
-      #beesComponent .beeComponent #beeContainerData h3 {
-        margin-bottom: 5%; }
-      #beesComponent .beeComponent #beeContainerData p {
-        margin-bottom: 1rem; }
-
-#postsComponent {
-  width: 56%;
-  padding: 0 1.56%; }
-
-@media all and (min-width: 375px) {
-  #headerComponent h1 {
-    width: 57%; }
-  #headerComponent div {
-    width: 30%; } }
-
-@media all and (min-width: 420px) {
-  #headerComponent {
-    padding: 4.76% 0; }
-    #headerComponent h1 {
-      width: 55%; }
-    #headerComponent div {
-      width: 30%; } }
-
-@media all and (min-width: 768px) {
-  #headerComponent h1 {
-    width: 50%;
-    margin-right: 3%; }
-  #headerComponent div {
-    width: 30%; } }
-
-@media all and (min-width: 1024px) {
-  #headerComponent {
-    padding: 2.76% 0; }
-    #headerComponent h1 {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-      margin-right: 1%; }
-    #headerComponent div {
-      width: 30%; }
-  .beeComponent:hover {
-    background-color: #f7f7f7;
-    border-radius: 10px; } }
+}

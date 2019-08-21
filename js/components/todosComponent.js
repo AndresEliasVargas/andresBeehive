@@ -7,6 +7,9 @@ class TodosComponent {
         
         this.container = document.createElement('section');
         this.container.setAttribute('id', 'todosComponent');
+        this.container.classList.add(
+            'col-6'
+        );
         this.container.hidden = true;
 
         this.main.appendChild(

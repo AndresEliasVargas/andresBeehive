@@ -7,6 +7,9 @@ class PostsComponent {
 
         this.container = document.createElement('section');
         this.container.setAttribute('id', 'postsComponent');
+        this.container.classList.add(
+            'col-6'
+        );
         this.container.hidden = true;
 
         //this.titleName = document.createElement('h2');

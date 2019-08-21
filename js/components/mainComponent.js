@@ -4,6 +4,9 @@ class MainComponent{
     constructor(){
         this.main = document.createElement('main');
         this.main.setAttribute('id', 'mainComponent');
+        this.main.classList.add('row');
+
+
         this.beesComponent = new BeesComponent(this.main, this);
         this.postsComponent = new PostsComponent(this.main, this);
         this.albumsComponent = new AlbumsComponent(this.main, this);
