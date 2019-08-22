@@ -6,7 +6,6 @@ class MainComponent{
         this.beesElement = document.querySelector('#beesComponent');
         this.beesInformation = document.querySelector('#beeInformation');
 
-
         this.main.append(this.beesElement, this.beesInformation);
 
 

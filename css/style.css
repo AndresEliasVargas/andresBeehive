@@ -6,7 +6,12 @@ body {
   height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "ABeeZee", "Arial Black", Gadget, sans-serif;
 }
 
@@ -15,7 +20,27 @@ h1, h2, h3, h4, h5, h6 {
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
 }
 
-#beesComponent, #beesInformation{
+#beesComponent,
+#beesInformation {
   height: 85vh;
   overflow-y: scroll;
+}
+
+#beesComponent::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+#beesComponent::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #e0e0e0;
+}
+
+#beesComponent::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
 }
