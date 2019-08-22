@@ -3,12 +3,17 @@
 class HeaderComponent {
     constructor(pUIManager) {
         this.uiManager = pUIManager;
+        this.body = document.getElementsByTagName('body')[0];
+
         this.header = document.createElement('header');
         this.header.setAttribute('id', 'headerComponent');
         this.header.classList.add(
-            'col-12',
+            'row',
             'py-4'
         );
+
+        this.container = document.createElement('div');
+        this.container.classList.add('col-12');
 
         this.title = document.createElement('h1');
         this.title.innerHTML = 'Beehive';
@@ -21,14 +26,15 @@ class HeaderComponent {
         this.img.setAttribute('src', '../../imgs/bee.png');
         this.img.classList.add('ml-2');
 
-        this.header.append(this.title);
+        this.header.appendChild(this.container);
+        this.container.appendChild(this.title);
         this.title.appendChild(this.img);
 
         this.mainComponent = new MainComponent(this.uiManager);
     };
 
     showTitle(pAppComponent, pAppManager) {
-        pAppComponent.prepend(this.header);
+        this.body.prepend(this.header);
         this.mainComponent.showMain(pAppComponent, pAppManager);
     };
 };
