@@ -11,6 +11,8 @@ Final Project of Programación Web Dinámica. Professor: Esteban Padilla.
 
 >Bootstrap 4.3.1
 
+>Hover.css
+
 **Google** **Fonts**
 >ABeeZee - Open Font License || https://fonts.google.com/specimen/ABeeZee
 

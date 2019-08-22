@@ -49,14 +49,14 @@ h6 {
   background-color: #F5F5F5;
 }
 
-#beeInformation{
+#beeInformation {
   background: linear-gradient(to bottom, #243072 0%, #0075be 100%);
 }
 
-.transparentBackground{
+.transparentBackground {
   background: rgba(0, 0, 0, .2)
 }
 
-.photoContainer{
+.photoContainer {
   float: left;
 }

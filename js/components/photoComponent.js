@@ -20,6 +20,9 @@ class PhotoComponent {
 
         let myImage = new Image(150, 150);
         myImage.src = this.model.thumbnailUrl;
+        myImage.classList.add(
+            'hvr-wobble-bottom'
+        );
 
         this.parent.appendChild(this.container);
         this.container.append(
