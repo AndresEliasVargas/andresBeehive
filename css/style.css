@@ -11,6 +11,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #headerComponent {
-  height: 15vh;
+  /* height: 15vh; */
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
 }
+
+/* #beesComponent{
+  height: 85vh;
+  overflow-y: scroll;
+} */

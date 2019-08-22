@@ -15,11 +15,11 @@ class PostsComponent {
         //this.titleName = document.createElement('h2');
         //this.titleName.innerHTML = this.uiManager.appManager.bee.name;
 
-        this.main.appendChild(this.container);
     }
-
+    
     showBeePostsComponent(bee) {
         this.container.innerHTML = '';
+        this.beesInformation.appendChild(this.container);
         bee.posts.map(post => new PostComponent(post, this.container, this.uiManager));
     };
 

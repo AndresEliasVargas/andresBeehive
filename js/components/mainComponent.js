@@ -6,6 +6,21 @@ class MainComponent{
         this.main.setAttribute('id', 'mainComponent');
         this.main.classList.add('row');
 
+        this.beesElement = document.createElement('section');
+        this.beesElement.setAttribute('id', 'beesComponent');
+        this.beesElement.classList.add(
+            'col-6',
+            'bg-info'
+        );
+
+        this.beesInformation = document.createElement('section');
+        this.beesInformation.setAttribute('id', 'beesInformation');
+        this.beesInformation.classList.add(
+            'col-6'
+        );
+
+        this.main.append(this.beesElement, this.beesInformation);
+
 
         this.beesComponent = new BeesComponent(this.main, this);
         this.postsComponent = new PostsComponent(this.main, this);

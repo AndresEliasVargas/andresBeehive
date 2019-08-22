@@ -1,8 +1,8 @@
 'use strict';
 
 class HeaderComponent {
-    constructor(pAppManager) {
-        this.appManager = pAppManager;
+    constructor(pUIManager) {
+        this.uiManager = pUIManager;
         this.header = document.createElement('header');
         this.header.setAttribute('id', 'headerComponent');
         this.header.classList.add(
@@ -24,11 +24,11 @@ class HeaderComponent {
         this.header.append(this.title);
         this.title.appendChild(this.img);
 
-        this.mainComponent = new MainComponent(this.appManager);
+        this.mainComponent = new MainComponent(this.uiManager);
     };
 
-    showTitle(pDiv, pAppManager) {
-        pDiv.prepend(this.header);
-        this.mainComponent.showMain(pDiv, pAppManager);
+    showTitle(pAppComponent, pAppManager) {
+        pAppComponent.prepend(this.header);
+        this.mainComponent.showMain(pAppComponent, pAppManager);
     };
 };

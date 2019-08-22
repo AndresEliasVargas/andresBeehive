@@ -3,18 +3,13 @@
 class AppComponent{
     constructor(pUIManager){
         this.uiManager = pUIManager;
-
-        this.container = document.createElement('div');
-        this.container.setAttribute('id', 'appComponent');
-        this.container.classList.add('row');
-
+        this.appComponent = document.getElementById('appComponent');
         this.headerComponent = new HeaderComponent(this.uiManager);
     };
 
-    addPrincipalElement(pBody){
-        pBody.prepend(this.container);
+    addHeaderElement(){
         this.headerComponent.showTitle(
-            this.container,
+            this.appComponent,
             this.uiManager
         );
     };
