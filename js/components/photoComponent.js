@@ -7,7 +7,12 @@ class PhotoComponent {
         this.parent = pparent;
 
         this.container = document.createElement('div');
-        this.container.classList.add('photoComponent');
+        this.container.classList.add(
+            'col-6',
+            'text-center',
+            'py-3'
+        );
+        this.container.setAttribute('id', 'photoContainer');
 
         this.title = document.createElement('p');
         this.title.classList.add('photoTitle');

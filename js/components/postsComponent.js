@@ -5,16 +5,11 @@ class PostsComponent {
         this.beesInformation = pBeesInformation;
         this.uiManager = pUIManager;
 
-        this.container = document.createElement('section');
-        this.container.setAttribute('id', 'postsComponent');
+        this.container = document.querySelector('#postsComponent'); 
         this.container.classList.add(
             'row'
         );
         this.container.hidden = true;
-
-        // this.titleName = document.createElement('h2');
-        // this.titleName.innerHTML = this.uiManager.appManager.bee.name;
-
     }
     
     showBeePostsComponent(bee) {

@@ -48,3 +48,15 @@ h6 {
   border-radius: 10px;
   background-color: #F5F5F5;
 }
+
+#beeInformation{
+  background: linear-gradient(to bottom, #243072 0%, #0075be 100%);
+}
+
+.transparentBackground{
+  background: rgba(0, 0, 0, .2)
+}
+
+.photoContainer{
+  float: left;
+}

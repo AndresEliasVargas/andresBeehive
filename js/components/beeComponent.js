@@ -86,6 +86,8 @@ class BeeComponent {
 
         //Buttons
         this.btnPost = document.createElement('button');
+        this.btnPost.setAttribute('id', 'btnPost');
+        this.btnPost.setAttribute('data-user', this.model.username);
         this.btnPost.classList.add(
             'btn',
             'btn-outline-success',
@@ -95,6 +97,7 @@ class BeeComponent {
         this.btnPost.onclick = this.onBtnPostClick.bind(this);
 
         this.btnAlbum = document.createElement('button');
+        this.btnAlbum.setAttribute('id', 'btnAlbum');
         this.btnAlbum.classList.add(
             'btn',
             'btn-outline-success',
@@ -104,6 +107,7 @@ class BeeComponent {
         this.btnAlbum.onclick = this.onBtnAlbumClick.bind(this);
 
         this.btnTodos = document.createElement('button');
+        this.btnTodos.setAttribute('id', 'btnTodos');
         this.btnTodos.classList.add(
             'btn',
             'btn-outline-success'

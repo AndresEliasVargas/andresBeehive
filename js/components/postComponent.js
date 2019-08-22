@@ -6,6 +6,8 @@ class PostComponent {
         this.parent = pParent;
         this.uiManager = pUIManager;
 
+        this.parent.scrollTo(0, 0);
+
         this.containerLeft = document.createElement('div');
         this.containerLeft.classList.add('col-1');
 
@@ -19,7 +21,6 @@ class PostComponent {
             'mt-2',
             'mb-3',
             'border',
-            'border-primary',
             'rounded',
             'bg-white'
         );

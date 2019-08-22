@@ -1,7 +1,7 @@
 'use strict';
 
-class MainComponent{
-    constructor(){
+class MainComponent {
+    constructor() {
         this.main = document.querySelector('#mainComponent');
         this.beesElement = document.querySelector('#beesComponent');
         this.beesInformation = document.querySelector('#beeInformation');
@@ -11,36 +11,36 @@ class MainComponent{
 
         this.beesComponent = new BeesComponent(this);
         this.postsComponent = new PostsComponent(this.beesInformation, this);
-        // this.albumsComponent = new AlbumsComponent(this.main, this);
+        this.albumsComponent = new AlbumsComponent(this.beesInformation, this);
         // this.todosComponent = new TodosComponent(this.main, this);
-        // this.newCommentComponent = new NewCommentComponent(this.main, this);
+        // this.newCommentComponent = new NewCommentComponent(this.main, this);        
     };
 
-    showMain(pUIManager){
+    showMain(pUIManager) {
         this.beesComponent.showBees(pUIManager.appManager.dataManager.bees, pUIManager);
     };
 
-    showBeePosts(bee){
+    showBeePosts(bee) {
         this.postsComponent.showBeePostsComponent(bee);
         this.postsComponent.show();
-        // this.albumsComponent.hide();
+        this.albumsComponent.hide();
         // this.todosComponent.hide();
         // this.newCommentComponent.hide();
     };
 
-    showBeeAlbums(bee){
+    showBeeAlbums(bee) {
         this.albumsComponent.showBeeAlbumsComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.show();
-        this.todosComponent.hide();
+        // this.todosComponent.hide();
         // this.newCommentComponent.hide();
     };
 
-    showBeeTodos(bee){
+    showBeeTodos(bee) {
         this.todosComponent.showBeeTodosComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.hide();
-        this.todosComponent.show();
+        // this.todosComponent.show();
         // this.newCommentComponent.hide();
     };
 };

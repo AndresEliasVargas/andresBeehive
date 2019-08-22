@@ -5,14 +5,13 @@ class AlbumsComponent {
         this.main = pMain;
         this.uiManager = pUIManager;
 
-        this.container = document.createElement('section');
-        this.container.setAttribute('id', 'albumsComponent');
+        this.container = document.querySelector('#albumsComponent');
         this.container.classList.add(
-            'col-6'
+            'row'
         );
         this.container.hidden = true;
 
-        this.main.appendChild(this.container);
+        this.main.append(this.container);
     }
 
     showBeeAlbumsComponent(bee) {
