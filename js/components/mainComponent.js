@@ -2,9 +2,7 @@
 
 class MainComponent{
     constructor(){
-        this.main = document.createElement('main');
-        this.main.setAttribute('id', 'mainComponent');
-        this.main.classList.add('row');
+        this.main = document.querySelector('#mainComponent');
 
         this.beesElement = document.createElement('section');
         this.beesElement.setAttribute('id', 'beesComponent');
@@ -22,16 +20,16 @@ class MainComponent{
         this.main.append(this.beesElement, this.beesInformation);
 
 
-        this.beesComponent = new BeesComponent(this.main, this);
+        this.beesComponent = new BeesComponent(this);
         this.postsComponent = new PostsComponent(this.main, this);
         this.albumsComponent = new AlbumsComponent(this.main, this);
         this.todosComponent = new TodosComponent(this.main, this);
         // this.newCommentComponent = new NewCommentComponent(this.main, this);
     };
 
-    showMain(pDiv, pAppManager){
-        pDiv.appendChild(this.main);
-        this.beesComponent.showBees(pAppManager.appManager.dataManager.bees, pAppManager);
+    showMain(pUIManager){
+        // pDiv.appendChild(this.main);
+        this.beesComponent.showBees(pUIManager.appManager.dataManager.bees, pUIManager);
     };
 
     showBeePosts(bee){

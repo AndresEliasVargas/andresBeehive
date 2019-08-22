@@ -33,8 +33,8 @@ class HeaderComponent {
         this.mainComponent = new MainComponent(this.uiManager);
     };
 
-    showTitle(pAppComponent, pAppManager) {
+    showTitle(pUIManager) {
         this.body.prepend(this.header);
-        this.mainComponent.showMain(pAppComponent, pAppManager);
+        this.mainComponent.showMain(pUIManager);
     };
 };
