@@ -1,8 +1,7 @@
 'use strict';
 
 class BeesComponent{
-    constructor(pMain, pUIManager){
-        this.main = pMain;
+    constructor(pUIManager){
         this.uiManager = pUIManager;
         this.beesElement = document.getElementById('beesComponent');
     }

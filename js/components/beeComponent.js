@@ -1,33 +1,37 @@
 'use strict';
 
 class BeeComponent {
-    constructor(pModel, pParent, pUIManager) {
+    constructor(pModel, pParent, pMainComponent) {
         this.model = pModel;
         this.parent = pParent;
-        this.uiManager = pUIManager; //mainComponent
+        this.mainComponent = pMainComponent; //mainComponent
 
         //Contenedor de los Bees
         this.beeContainer = document.createElement('div');
         this.beeContainer.classList.add(
-            'row'
+            'row',
+            'my-4'
         );
 
         //contenedor de fotos y bee
         this.beeImgContainer = document.createElement('div');
         this.beeImgContainer.setAttribute('id', 'beeImgContainer');
         this.beeImgContainer.classList.add(
-            'col-4'
+            'col-3'
         );
 
         this.beeContainerData = document.createElement('div');
         this.beeContainerData.setAttribute('id', 'beeContainerData');
         this.beeContainerData.classList.add(
-            'col-8'
+            'col-9'
         );
 
         //photo
         this.img = document.createElement('img');
         this.img.setAttribute('src', 'https://via.placeholder.com/150/92c952');
+        this.img.classList.add(
+            'img-fluid'
+        );
 
         //Nombre del Bee
         this.title = document.createElement('h3');
@@ -84,8 +88,8 @@ class BeeComponent {
         this.btnPost = document.createElement('button');
         this.btnPost.classList.add(
             'btn',
-            'btn-primary',
-            'mr-5'
+            'btn-outline-success',
+            'mr-3'
         );
         this.btnPost.innerHTML = 'Post: ' + this.model.posts.length;
         this.btnPost.onclick = this.onBtnPostClick.bind(this);
@@ -93,8 +97,8 @@ class BeeComponent {
         this.btnAlbum = document.createElement('button');
         this.btnAlbum.classList.add(
             'btn',
-            'btn-primary',
-            'mr-5'
+            'btn-outline-info',
+            'mr-3'
         );
         this.btnAlbum.innerHTML = 'Album: ' + this.model.posts.length;
         this.btnAlbum.onclick = this.onBtnAlbumClick.bind(this);
@@ -102,8 +106,7 @@ class BeeComponent {
         this.btnTodos = document.createElement('button');
         this.btnTodos.classList.add(
             'btn',
-            'btn-primary',
-            'mr-5'
+            'btn-outline-danger'
         );
         this.btnTodos.innerHTML = 'Todos: ' + this.model.posts.length;
         this.btnTodos.onclick = this.onBtnTodosClick.bind(this);
@@ -138,21 +141,20 @@ class BeeComponent {
             this.btnAlbum,
             this.btnTodos
         );
-
     };
 
     onBtnPostClick() {
         window.scrollTo(0, 0);
-        this.uiManager.showBeePosts(this.model);
+        this.mainComponent.showBeePosts(this.model);
     };
 
     onBtnAlbumClick() {
         window.scrollTo(0, 0);
-        this.uiManager.showBeeAlbums(this.model);
+        this.mainComponent.showBeeAlbums(this.model);
     };
 
     onBtnTodosClick() {
         window.scrollTo(0, 0);
-        this.uiManager.showBeeTodos(this.model);
+        this.mainComponent.showBeeTodos(this.model);
     };
 };

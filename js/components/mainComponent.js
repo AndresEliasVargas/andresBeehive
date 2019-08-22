@@ -3,32 +3,21 @@
 class MainComponent{
     constructor(){
         this.main = document.querySelector('#mainComponent');
+        this.beesElement = document.querySelector('#beesComponent');
+        this.beesInformation = document.querySelector('#beeInformation');
 
-        this.beesElement = document.createElement('section');
-        this.beesElement.setAttribute('id', 'beesComponent');
-        this.beesElement.classList.add(
-            'col-6',
-            'bg-info'
-        );
-
-        this.beesInformation = document.createElement('section');
-        this.beesInformation.setAttribute('id', 'beesInformation');
-        this.beesInformation.classList.add(
-            'col-6'
-        );
 
         this.main.append(this.beesElement, this.beesInformation);
 
 
         this.beesComponent = new BeesComponent(this);
-        this.postsComponent = new PostsComponent(this.main, this);
-        this.albumsComponent = new AlbumsComponent(this.main, this);
-        this.todosComponent = new TodosComponent(this.main, this);
+        // this.postsComponent = new PostsComponent(this.main, this);
+        // this.albumsComponent = new AlbumsComponent(this.main, this);
+        // this.todosComponent = new TodosComponent(this.main, this);
         // this.newCommentComponent = new NewCommentComponent(this.main, this);
     };
 
     showMain(pUIManager){
-        // pDiv.appendChild(this.main);
         this.beesComponent.showBees(pUIManager.appManager.dataManager.bees, pUIManager);
     };
 
