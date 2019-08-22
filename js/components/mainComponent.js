@@ -10,7 +10,7 @@ class MainComponent{
 
 
         this.beesComponent = new BeesComponent(this);
-        // this.postsComponent = new PostsComponent(this.main, this);
+        this.postsComponent = new PostsComponent(this.beesInformation, this);
         // this.albumsComponent = new AlbumsComponent(this.main, this);
         // this.todosComponent = new TodosComponent(this.main, this);
         // this.newCommentComponent = new NewCommentComponent(this.main, this);
@@ -23,8 +23,8 @@ class MainComponent{
     showBeePosts(bee){
         this.postsComponent.showBeePostsComponent(bee);
         this.postsComponent.show();
-        this.albumsComponent.hide();
-        this.todosComponent.hide();
+        // this.albumsComponent.hide();
+        // this.todosComponent.hide();
         // this.newCommentComponent.hide();
     };
 

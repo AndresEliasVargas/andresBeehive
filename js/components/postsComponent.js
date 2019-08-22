@@ -1,19 +1,19 @@
 'use strict';
 
 class PostsComponent {
-    constructor(pMain, pUIManager) {
-        this.main = pMain;
+    constructor(pBeesInformation, pUIManager) {
+        this.beesInformation = pBeesInformation;
         this.uiManager = pUIManager;
 
         this.container = document.createElement('section');
         this.container.setAttribute('id', 'postsComponent');
         this.container.classList.add(
-            'col-6'
+            'row'
         );
         this.container.hidden = true;
 
-        //this.titleName = document.createElement('h2');
-        //this.titleName.innerHTML = this.uiManager.appManager.bee.name;
+        // this.titleName = document.createElement('h2');
+        // this.titleName.innerHTML = this.uiManager.appManager.bee.name;
 
     }
     

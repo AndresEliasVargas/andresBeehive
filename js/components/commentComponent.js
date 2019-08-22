@@ -16,7 +16,12 @@ class CommentComponent{
         this.body.innerHTML = this.model.body;
 
         this.email = document.createElement('p');
-        this.email.innerHTML = '<b>' + this.model.email + '</b>';
+        this.email.innerHTML = this.model.email;
+        this.email.classList.add(
+            'text-right',
+            'font-italic',
+            'text-black-50'
+        );
 
 
         this.parent.appendChild(this.container);
@@ -26,7 +31,5 @@ class CommentComponent{
             this.body,
             this.email
         );
-    }
-
-    
+    };
 };

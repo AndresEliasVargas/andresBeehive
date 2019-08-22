@@ -71,7 +71,7 @@ class DataManager {
                 });
 
                 this.getPosts();
-                
+
             };
         };
     };
@@ -89,7 +89,7 @@ class DataManager {
                 this.addPostToBee(post);
 
                 //Post 2
-                post = new Post(101, 0, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores velit perspiciatis esse eveniet alias enim, totam voluptas recusandae numquam tempora libero molestiae aliquid nesciunt. Tempore enim dolor eligendi tempora architecto!', 'Lorem Ipsum');
+                post = new Post(101, 0, 'Has oratio denique nostrum eu. In eos impetus praesent. Ut fabellas sententiae sea, vix ut dicit diceret. Sea ea timeam contentiones. Ad qui essent legendos, id vix principes sadipscing consequuntur. Ex dicta delicata hendrerit eam, sea primis epicurei legendos ad.', 'Est ea quando sententiae');
                 this.addPostToBee(post);
 
                 postsData.map(postData => {
@@ -110,29 +110,29 @@ class DataManager {
                 const commentsData = JSON.parse(request.response);
 
                 //post 1
-                let comment = new Comment(0, 'bla bla bla bla bla', 1, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
-                this.addCommentToPostBee(comment);
-                
-                comment = new Comment(0, 'bla bla bla bla bla', 2, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                let comment = new Comment(0, 'Usu animal inimicus vulputate an', 1, 'Cary@taurean.biz', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.');
                 this.addCommentToPostBee(comment);
 
-                comment = new Comment(0, 'bla bla bla bla bla', 3, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
+                comment = new Comment(0, 'Scripta appetere maiestatis mei ex', 2, 'Shanna@melissa.tv', 'Laboriosam quaerat sapiente minima nam minus similique illum architecto et!');
                 this.addCommentToPostBee(comment);
 
-                comment = new Comment(0, 'bla bla bla bla bla', 4, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                comment = new Comment(0, 'Pro cu dolorum delicata', 3, 'Nikita@garfield.biz', 'Incidunt vitae quae facere ducimus nostrum aliquid dolorum veritatis dicta!');
+                this.addCommentToPostBee(comment);
+
+                comment = new Comment(0, 'Feugiat delectus instructior cu ius has', 4, 'Lura@rod.tv', 'Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!');
                 this.addCommentToPostBee(comment);
 
                 //post 2 - arreglar
-                comment = new Comment(101, 'bla bla bla bla bla', 1, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
+                comment = new Comment(101, 'molestias et odio ut commodi omnis ex', 1, 'Telly.Hoeger@billy.biz', 'perferendis omnis esse voluptate sit mollitia sed perferendis nemo nostrum qui vel quis nisi doloribus animi odio id quas');
                 this.addCommentToPostBee(comment);
                 
-                comment = new Comment(101, 'bla bla bla bla bla', 2, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                comment = new Comment(101, 'ipsum a ut', 2, 'Rey.Padberg@karina.biz', 'et ipsa rem ullam cum pariatur similique quia cum ipsam est sed aut inventore provident sequi commodi enim inventore assumenda aut aut tempora possimus soluta quia consequatur modi illo');
+                this.addCommentToPostBee(comment);
+                
+                comment = new Comment(101, 'An sit nulla essent tamquam. Qui cu mazim senserit ea.', 3, 'Telly.Hoeger@billy.biz', 'est officiis placeat id et iusto ut fugit numquam eos aut voluptas ad quia tempore qui quibusdam doloremque recusandae tempora qui');
                 this.addCommentToPostBee(comment);
 
-                comment = new Comment(101, 'bla bla bla bla bla', 3, 'Cary@taurean.biz', 'lorem ipsun dolor sit amet');
-                this.addCommentToPostBee(comment);
-
-                comment = new Comment(101, 'bla bla bla bla bla', 4, 'Shanna@melissa.tv', 'lorem ipsun dolor sit amet');
+                comment = new Comment(101, 'ut quas facilis laborum voluptatum consequatur odio voluptate et', 4, 'Shanna@melissa.tv', 'itaque veritatis explicabo quis voluptatem mollitia soluta id non doloribus nobis fuga provident nesciunt saepe molestiae praesentium laboriosam');
                 this.addCommentToPostBee(comment);
 
                 commentsData.map(commentData => {
@@ -153,7 +153,7 @@ class DataManager {
             if (request.status === 200) {
                 const albumsData = JSON.parse(request.response);
                 //console.log(albumsData);
-                
+
 
                 let albumObj = new Album(101, 'Mascotas', 0);
                 this.addAlbumToBee(albumObj);

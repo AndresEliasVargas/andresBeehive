@@ -97,7 +97,7 @@ class BeeComponent {
         this.btnAlbum = document.createElement('button');
         this.btnAlbum.classList.add(
             'btn',
-            'btn-outline-info',
+            'btn-outline-success',
             'mr-3'
         );
         this.btnAlbum.innerHTML = 'Album: ' + this.model.posts.length;
@@ -106,7 +106,7 @@ class BeeComponent {
         this.btnTodos = document.createElement('button');
         this.btnTodos.classList.add(
             'btn',
-            'btn-outline-danger'
+            'btn-outline-success'
         );
         this.btnTodos.innerHTML = 'Todos: ' + this.model.posts.length;
         this.btnTodos.onclick = this.onBtnTodosClick.bind(this);
