@@ -10,20 +10,22 @@ class BeeComponent {
         this.beeContainer = document.createElement('div');
         this.beeContainer.classList.add(
             'row',
-            'my-4'
+            'my-4',
+            'py-3'
         );
 
         //contenedor de fotos y bee
         this.beeImgContainer = document.createElement('div');
         this.beeImgContainer.setAttribute('id', 'beeImgContainer');
         this.beeImgContainer.classList.add(
-            'col-3'
+            'col-md-3',
+            'mb-4'
         );
 
         this.beeContainerData = document.createElement('div');
         this.beeContainerData.setAttribute('id', 'beeContainerData');
         this.beeContainerData.classList.add(
-            'col-9'
+            'col-md-9'
         );
 
         //photo
@@ -91,7 +93,8 @@ class BeeComponent {
         this.btnPost.classList.add(
             'btn',
             'btn-outline-success',
-            'mr-3'
+            'mr-3',
+            'mb-3'
         );
         this.btnPost.innerHTML = 'Post: ' + this.model.posts.length;
         this.btnPost.onclick = this.onBtnPostClick.bind(this);
@@ -101,18 +104,21 @@ class BeeComponent {
         this.btnAlbum.classList.add(
             'btn',
             'btn-outline-success',
-            'mr-3'
+            'mr-3',
+            'mb-3'
         );
-        this.btnAlbum.innerHTML = 'Album: ' + this.model.posts.length;
+        
+        this.btnAlbum.innerHTML = 'Album: ' + this.model.albums.length;
         this.btnAlbum.onclick = this.onBtnAlbumClick.bind(this);
 
         this.btnTodos = document.createElement('button');
         this.btnTodos.setAttribute('id', 'btnTodos');
         this.btnTodos.classList.add(
             'btn',
-            'btn-outline-success'
+            'btn-outline-success',
+            'mb-3'
         );
-        this.btnTodos.innerHTML = 'Todos: ' + this.model.posts.length;
+        this.btnTodos.innerHTML = 'Todos: ' + this.model.todos.length;
         this.btnTodos.onclick = this.onBtnTodosClick.bind(this);
 
 

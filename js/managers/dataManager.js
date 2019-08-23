@@ -177,7 +177,16 @@ class DataManager {
                 const photosData = JSON.parse(request.response);
                 //console.log(photosData);
 
-                let photos = new Photo(101, 5001, '../../imgs/pusheen.jpeg', 'Pusshen', '../../imgs/pusheen.jpeg');
+                let photos = new Photo(101, 5001, '../../imgs/mascotasAlbum/pusheen.jpg', 'Pusshen', '../../imgs/pusheen.jpeg');
+                this.addPhotosToAlbum(photos);
+
+                photos = new Photo(101, 5002, '../../imgs/mascotasAlbum/molly.jpg', 'Molly', '../../imgs/molly.jpeg');
+                this.addPhotosToAlbum(photos);
+
+                photos = new Photo(101, 5003, '../../imgs/mascotasAlbum/luna.jpg', 'Luna', '../../imgs/luna.jpeg');
+                this.addPhotosToAlbum(photos);
+
+                photos = new Photo(101, 5004, '../../imgs/mascotasAlbum/bowie.jpg', 'Bowie', '../../imgs/bowie.jpeg');
                 this.addPhotosToAlbum(photos);
 
                 photosData.map(photo => {

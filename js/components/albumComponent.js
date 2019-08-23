@@ -27,7 +27,8 @@ class AlbumComponent {
 
         this.titleContainer = document.createElement('div');
         this.titleContainer.classList.add(
-            'col-12'
+            'col-12',
+            'pt-3'
         );
 
         this.title = document.createElement('h2');

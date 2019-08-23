@@ -1,13 +1,19 @@
 'use strict';
 
-class CommentComponent{
-    constructor(pModel, pParent, pUIManager){
+class CommentComponent {
+    constructor(pModel, pParent, pUIManager) {
         this.model = pModel;
         this.parent = pParent;
         this.uiManager = pUIManager;
 
         this.container = document.createElement('div');
-        this.container.classList.add('commentComponent');
+        this.container.classList.add(
+            'commentComponent',
+            'py-3',
+            'px-4',
+            'mb-2',
+            'rounded'
+        );
 
         this.name = document.createElement('p');
         this.name.innerHTML = '<b>' + this.model.name + '</b>';
