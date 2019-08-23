@@ -1,8 +1,9 @@
 'use strict';
 
 class HeaderComponent {
-    constructor(pUIManager) {
+    constructor(pUIManager, pAppManager) {
         this.uiManager = pUIManager;
+        this.appManager = pAppManager;
         this.body = document.getElementsByTagName('body')[0];
 
         this.header = document.createElement('header');
@@ -30,7 +31,7 @@ class HeaderComponent {
         this.container.appendChild(this.title);
         this.title.appendChild(this.img);
 
-        this.mainComponent = new MainComponent(this.uiManager);
+        this.mainComponent = new MainComponent(this.appManager);
     };
 
     showTitle(pUIManager) {

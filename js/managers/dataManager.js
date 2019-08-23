@@ -6,6 +6,7 @@ class DataManager {
         this.url = 'https://jsonplaceholder.typicode.com/';
         this.bees = [];
         this.getData();
+        this.bee;
     };
 
     getData() {
@@ -59,14 +60,14 @@ class DataManager {
                 let geo = new Geo(0, 0);
                 let address = new Address('San José', geo, 'Calle 43', '3035', '10803');
                 let company = new Company('​Si no vivimos como pensamos, pronto empezaremos a pensar como vivimos.', 'A trabajar carajo xD', 'Entrepreneur');
-                let bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@gmail.com', address, '506-7134-1350', 'https://github.com/AndresEliasVargas', company);
-                this.bees.push(bee);
+                this.bee = new Bee(0, 'Andrés Vargas', 'avargasr', 'andreselias.vargas@gmail.com', address, '506-7134-1350', 'https://github.com/AndresEliasVargas', company);
+                this.bees.push(this.bee);
 
                 data.map(userData => {
                     geo = new Geo(userData.address.geo.lat, userData.address.geo.lng);
                     address = new Address(userData.address.city, geo, userData.address.street, userData.address.suite, userData.address.zipcode);
                     company = new Company(userData.company.bs, userData.company.catchPhrase, userData.company.name);
-                    bee = new Bee(userData.id, userData.name, userData.username, userData.email, address, userData.phone, userData.website, company);
+                    let bee = new Bee(userData.id, userData.name, userData.username, userData.email, address, userData.phone, userData.website, company);
                     this.bees.push(bee);
                 });
 

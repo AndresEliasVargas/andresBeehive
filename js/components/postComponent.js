@@ -67,9 +67,7 @@ class PostComponent {
     }
 
     addNewComment() {
-        this.uiManager.showNewCommentComponent(
-            this.model
-        );
+        this.uiManager.showNewCommentComponent(this.model);
     }
 
     addCommentComponents() {

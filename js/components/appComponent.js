@@ -1,9 +1,10 @@
 'use strict';
 
 class AppComponent{
-    constructor(pUIManager){
+    constructor(pUIManager, pAppManager){
         this.uiManager = pUIManager;
-        this.headerComponent = new HeaderComponent(this.uiManager);
+        this.appManager = pAppManager;
+        this.headerComponent = new HeaderComponent(this.uiManager, this.appManager);
     };
 
     addHeaderElement(){

@@ -1,9 +1,10 @@
 'use strict';
 
 class NewCommentComponent {
-    constructor(pMain, pUIManager) {
+    constructor(pMain, pUIManager, pAppManager) {
         this.main = pMain;
         this.uiManager = pUIManager;
+        this.appManager = pAppManager;
 
         this.rowContainer = document.getElementById('newCommentComponent');
         this.rowContainer.classList.add(
@@ -30,10 +31,13 @@ class NewCommentComponent {
         );
 
 
-        this.inputName = document.createElement('div');
-        this.inputName.innerHTML = '<input type="text" placeholder="Title" class="form-control">';
+        this.inputName = document.createElement('input');
+        this.inputName.type = 'text';
+        this.inputName.placeholder = 'Title';
+        this.inputName.setAttribute('id', 'inputTitleComment');
         this.inputName.classList.add(
-            'my-3'
+            'my-3',
+            'form-control'
         );
 
         this.textAreaBody = document.createElement('textarea');
@@ -72,14 +76,12 @@ class NewCommentComponent {
     }
 
     addCommentBtnOnClick() {
-        console.log(this.uiManager);
-        
         let comment = new Comment(
             0,
-            this.name.value,
+            this.inputName.value,
             0,
             this.uiManager.appManager.dataManager.bee.email,
-            this.body.value
+            this.textAreaBody.value
         );
 
         this.model.comments.unshift(comment);
