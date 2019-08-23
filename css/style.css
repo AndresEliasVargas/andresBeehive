@@ -21,6 +21,10 @@ h6 {
   font-family: "ABeeZee", "Arial Black", Gadget, sans-serif;
 }
 
+textarea{
+  display: block;
+}
+
 #headerComponent {
   height: 15vh;
   background: url(../imgs/appBackgrounds/beePattern.png), linear-gradient(to bottom, #0075be 0%, #243072 100%);
@@ -85,7 +89,7 @@ h6 {
 }
 
 .commentComponent p{
-  display: block;
+  /* display: block; */
   word-wrap: break-word;
 }
 
