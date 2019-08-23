@@ -8,15 +8,21 @@ class PostComponent {
 
         this.parent.scrollTo(0, 0);
 
+        this.containerRow = document.createElement('div');
+        this.containerRow.classList.add(
+            'row'
+        );
+
         this.containerLeft = document.createElement('div');
-        this.containerLeft.classList.add('col-1');
+        this.containerLeft.classList.add('col-md-1');
 
         this.containerRight = document.createElement('div');
-        this.containerRight.classList.add('col-1');
+        this.containerRight.classList.add('col-md-1');
 
         this.container = document.createElement('div');
         this.container.classList.add(
-            'col-10',
+            'col-12',
+            'col-md-10',
             'pt-3',
             'mt-2',
             'mb-3',
@@ -50,7 +56,8 @@ class PostComponent {
         );
         this.btn.onclick = this.addNewComment.bind(this);
 
-        this.parent.append(this.containerLeft, this.container, this.containerRight);
+        this.parent.appendChild(this.containerRow);
+        this.containerRow.append(this.containerLeft, this.container, this.containerRight);
 
         this.container.append(
             this.title,

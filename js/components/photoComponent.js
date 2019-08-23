@@ -8,7 +8,8 @@ class PhotoComponent {
 
         this.container = document.createElement('div');
         this.container.classList.add(
-            'col-6',
+            'col-md-12',
+            'col-lg-6',
             'text-center',
             'py-3'
         );
@@ -21,7 +22,8 @@ class PhotoComponent {
         let myImage = new Image(150, 150);
         myImage.src = this.model.thumbnailUrl;
         myImage.classList.add(
-            'hvr-wobble-bottom'
+            'hvr-wobble-bottom',
+            'img-fluid'
         );
 
         this.parent.appendChild(this.container);

@@ -6,9 +6,6 @@ class PostsComponent {
         this.uiManager = pUIManager;
 
         this.container = document.querySelector('#postsComponent'); 
-        this.container.classList.add(
-            'row'
-        );
         this.container.hidden = true;
     }
     

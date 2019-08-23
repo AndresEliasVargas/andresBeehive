@@ -7,14 +7,15 @@ class AlbumComponent {
         this.uiManager = pUIManager;
 
         this.containerLeft = document.createElement('div');
-        this.containerLeft.classList.add('col-1');
+        this.containerLeft.classList.add('col-md-1');
 
         this.containerRight = document.createElement('div');
-        this.containerRight.classList.add('col-1');
+        this.containerRight.classList.add('col-md-1');
 
         this.principalContainer = document.createElement('div');
         this.principalContainer.classList.add(
-            'col-10',
+            'col-12',
+            'col-md-10',
             'mb-4'
         );
 

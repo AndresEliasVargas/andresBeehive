@@ -1,4 +1,4 @@
-:root{
+:root {
   --light-grey: #F5F5F5;
   --light-blue: #f0f8ff;
 }
@@ -58,11 +58,11 @@ h6 {
   background: linear-gradient(to bottom, #243072 0%, #0075be 100%);
 }
 
-#beeContainerData{
+#beeContainerData {
   position: relative;
 }
 
-#beeContainerData a{
+#beeContainerData a {
   display: block;
   word-wrap: break-word;
 }
@@ -75,6 +75,24 @@ h6 {
   float: left;
 }
 
-.commentComponent{
+.commentComponent {
   background: var(--light-blue);
+  position: relative;
+}
+
+.commentComponent p{
+  display: block;
+  word-wrap: break-word;
+}
+
+@media all and (max-width: 400px) {
+  h3 {
+    font-size: 1.34rem;
+  }
+}
+
+@media all and (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem;
+  }
 }
