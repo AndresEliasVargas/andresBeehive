@@ -10,12 +10,11 @@ class AlbumsComponent {
             'row'
         );
         this.container.hidden = true;
-
-        this.main.append(this.container);
     }
 
     showBeeAlbumsComponent(bee) {
         this.container.innerHTML = '';
+        this.main.scrollTo(0, 0);
         bee.albums.map(album => new AlbumComponent(
             album,
             this.container,

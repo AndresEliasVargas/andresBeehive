@@ -6,8 +6,6 @@ class PostComponent {
         this.parent = pParent;
         this.uiManager = pUIManager;
 
-        this.parent.scrollTo(0, 0);
-
         this.containerRow = document.createElement('div');
         this.containerRow.classList.add(
             'row'

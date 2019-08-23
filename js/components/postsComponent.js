@@ -12,6 +12,7 @@ class PostsComponent {
     showBeePostsComponent(bee) {
         this.container.innerHTML = '';
         this.beesInformation.appendChild(this.container);
+        this.beesInformation.scrollTo(0, 0);
         bee.posts.map(post => new PostComponent(post, this.container, this.uiManager));
     };
 

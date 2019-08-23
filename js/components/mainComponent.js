@@ -12,7 +12,7 @@ class MainComponent {
         this.beesComponent = new BeesComponent(this);
         this.postsComponent = new PostsComponent(this.beesInformation, this);
         this.albumsComponent = new AlbumsComponent(this.beesInformation, this);
-        // this.todosComponent = new TodosComponent(this.main, this);
+        this.todosComponent = new TodosComponent(this.beesInformation, this);
         // this.newCommentComponent = new NewCommentComponent(this.main, this);        
     };
 
@@ -24,7 +24,7 @@ class MainComponent {
         this.postsComponent.showBeePostsComponent(bee);
         this.postsComponent.show();
         this.albumsComponent.hide();
-        // this.todosComponent.hide();
+        this.todosComponent.hide();
         // this.newCommentComponent.hide();
     };
 
@@ -32,7 +32,7 @@ class MainComponent {
         this.albumsComponent.showBeeAlbumsComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.show();
-        // this.todosComponent.hide();
+        this.todosComponent.hide();
         // this.newCommentComponent.hide();
     };
 
@@ -40,7 +40,7 @@ class MainComponent {
         this.todosComponent.showBeeTodosComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.hide();
-        // this.todosComponent.show();
+        this.todosComponent.show();
         // this.newCommentComponent.hide();
     };
 };

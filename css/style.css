@@ -67,12 +67,16 @@ h6 {
   word-wrap: break-word;
 }
 
-.transparentBackground {
-  background: rgba(0, 0, 0, .2)
+.disRoot{
+  display: flow-root;
 }
 
-.photoContainer {
+.left{
   float: left;
+}
+
+.transparentBackground {
+  background: rgba(0, 0, 0, .2)
 }
 
 .commentComponent {
@@ -85,6 +89,10 @@ h6 {
   word-wrap: break-word;
 }
 
+.todoComponent{
+  padding-top: .75rem;
+}
+
 @media all and (max-width: 400px) {
   h3 {
     font-size: 1.34rem;
@@ -95,4 +103,18 @@ h6 {
   h2 {
     font-size: 1.5rem;
   }
+}
+
+@media all and (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* size of the checkbox */
+  input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    margin-top: .275rem !important;
+  }
+
 }

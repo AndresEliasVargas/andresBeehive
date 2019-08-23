@@ -4,27 +4,19 @@ class TodosComponent {
     constructor(pMain, pUIManager) {
         this.main = pMain;
         this.uiManager = pUIManager;
-        
-        this.container = document.createElement('section');
-        this.container.setAttribute('id', 'todosComponent');
-        this.container.classList.add(
-            'col-6'
-        );
-        this.container.hidden = true;
 
-        this.main.appendChild(
-            this.container
-        );
+        this.container = document.querySelector('#todosComponent');
+        this.container.hidden = true;
     }
 
     showBeeTodosComponent(bee) {
         this.container.innerHTML = '';
+        this.main.scrollTo(0, 0);
         bee.todos.map(todo => new TodoComponent(
             todo,
             this.container,
             this.uiManager
-            )
-        );
+        ));
     }
 
     show() {
