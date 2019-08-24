@@ -156,15 +156,34 @@ class BeeComponent {
     onBtnPostClick() {
         window.scrollTo(0, 0);
         this.mainComponent.showBeePosts(this.model);
+        this.selected();
     };
 
     onBtnAlbumClick() {
         window.scrollTo(0, 0);
         this.mainComponent.showBeeAlbums(this.model);
+        this.selected();
     };
 
     onBtnTodosClick() {
         window.scrollTo(0, 0);
         this.mainComponent.showBeeTodos(this.model);
+        this.selected();
     };
+
+    selected(){
+        this.beeContainer.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-azure');
+    }
+
+    unSelected(){
+        this.beeContainer.style.backgroundColor = getComputedStyle(document.documentElement).getProperty('bg-white');
+    }
+
+    updatePostCount(){
+        this.btnPost.innerHTML = 'Posts: ' + this.model.posts.length;
+    }
+
+    updateTodosCount(){
+        this.btnTodos.innerHTML = 'Todos: ' + this.model.todos.length;
+    }
 };

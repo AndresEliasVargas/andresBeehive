@@ -1,6 +1,8 @@
 :root {
   --light-grey: #F5F5F5;
   --light-blue: #f0f8ff;
+  --bg-azure: #E0EEEE;
+  --bg-white: rgb(255, 255, 255);
 }
 
 html {
@@ -21,7 +23,7 @@ h6 {
   font-family: "ABeeZee", "Arial Black", Gadget, sans-serif;
 }
 
-textarea{
+textarea {
   display: block;
 }
 
@@ -71,11 +73,11 @@ textarea{
   word-wrap: break-word;
 }
 
-.disRoot{
+.disRoot {
   display: flow-root;
 }
 
-.left{
+.left {
   float: left;
 }
 
@@ -88,11 +90,11 @@ textarea{
   position: relative;
 }
 
-.commentComponent p{
+.commentComponent p {
   word-wrap: break-word;
 }
 
-.todoComponent{
+.todoComponent {
   padding-top: .75rem;
 }
 
@@ -114,7 +116,7 @@ textarea{
   }
 
   /* size of the checkbox */
-  input[type="checkbox"]{
+  input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin-top: .275rem !important;

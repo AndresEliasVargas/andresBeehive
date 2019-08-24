@@ -21,11 +21,12 @@ class MainComponent {
     };
 
     showMain(pUIManager) {
+        this.beeComponents = pUIManager.appManager.dataManager.bees;
         this.beesComponent.showBees(pUIManager.appManager.dataManager.bees, pUIManager);
     };
 
     showBeePosts(bee) {
-        this.unselectBeeComponents();
+        this.unSelectBeeComponents();
         // this.enableNewBtn();
         this.state = 1;
         this.selectedBee = bee;
@@ -40,11 +41,11 @@ class MainComponent {
     };
 
     showBeeAlbums(bee) {
-        this.unselectBeeComponents();
+        this.unSelectBeeComponents();
         // this.disableNewBtn();
         this.state = 2;
         this.selectedBee = bee;
-        this.albumsComponent.showBeeAlbums(bee);
+        this.albumsComponent.showBeeAlbumsComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.show();
         this.todosComponent.hide();
@@ -54,11 +55,11 @@ class MainComponent {
     };
 
     showBeeTodos(bee) {
-        this.unselectBeeComponents();
+        this.unSelectBeeComponents();
         // this.enableNewBtn();
         this.state = 3;
         this.selectedBee = bee;
-        this.todosComponent.showBeeTodos(bee);
+        this.todosComponent.showBeeTodosComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.hide();
         this.todosComponent.show();
@@ -122,14 +123,15 @@ class MainComponent {
     //     this.newBtn.disabled = false;
     // }
 
-    unselectBeeComponents(){
-        this.beeComponents.forEach(beeComponent => {
+    unSelectBeeComponents(){
+        console.log(this.appManager.uiManager.appComponent.headerComponent.mainComponent);
+        this.beeComponents.map(beeComponent => {
             beeComponent.unSelected();
         });
     }
 
     updatePostCount(){
-        this.beeComponents.forEach(beeComponent => {
+        this.beeComponents.map(beeComponent => {
             if(beeComponent.model.id == this.selectedBee.id){
                 beeComponent.updatePostCount();
             }
@@ -137,7 +139,7 @@ class MainComponent {
     }
 
     updateTodosCount(){
-        this.beeComponents.forEach(beeComponent => {
+        this.beeComponents.map(beeComponent => {
             if(beeComponent.model.id == this.selectedBee.id){
                 beeComponent.updateTodosCount();
             }
