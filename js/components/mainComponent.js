@@ -26,7 +26,7 @@ class MainComponent {
     };
 
     showBeePosts(bee) {
-        this.unSelectBeeComponents();
+        // this.unSelectBeeComponents();
         // this.enableNewBtn();
         this.state = 1;
         this.selectedBee = bee;
@@ -37,11 +37,11 @@ class MainComponent {
         this.newCommentComponent.hide();
         // this.newPostComponent.hide();
         // this.newTodoComponent.hide();
-        this.updatePostCount()
+        // this.updatePostCount();
     };
 
     showBeeAlbums(bee) {
-        this.unSelectBeeComponents();
+        // this.unSelectBeeComponents();
         // this.disableNewBtn();
         this.state = 2;
         this.selectedBee = bee;
@@ -55,7 +55,7 @@ class MainComponent {
     };
 
     showBeeTodos(bee) {
-        this.unSelectBeeComponents();
+        // this.unSelectBeeComponents();
         // this.enableNewBtn();
         this.state = 3;
         this.selectedBee = bee;
@@ -123,26 +123,26 @@ class MainComponent {
     //     this.newBtn.disabled = false;
     // }
 
-    unSelectBeeComponents(){
-        console.log(this.appManager.uiManager.appComponent.headerComponent.mainComponent);
-        this.beeComponents.map(beeComponent => {
-            beeComponent.unSelected();
-        });
-    }
+    // unSelectBeeComponents(){
+    //     console.log(this.appManager.uiManager.appComponent.headerComponent.mainComponent);
+    //     this.beeComponents.map(beeComponent => {
+    //         beeComponent.unSelected();
+    //     });
+    // }
 
-    updatePostCount(){
-        this.beeComponents.map(beeComponent => {
-            if(beeComponent.model.id == this.selectedBee.id){
-                beeComponent.updatePostCount();
-            }
-        });
-    }
+    // updatePostCount(){
+    //     this.beeComponents.map(beeComponent => {
+    //         if(beeComponent.model.id == this.selectedBee.id){
+    //             beeComponent.updatePostCount();
+    //         }
+    //     });
+    // }
 
-    updateTodosCount(){
-        this.beeComponents.map(beeComponent => {
-            if(beeComponent.model.id == this.selectedBee.id){
-                beeComponent.updateTodosCount();
-            }
-        });
-    }
+    // updateTodosCount(){
+    //     this.beeComponents.map(beeComponent => {
+    //         if(beeComponent.model.id == this.selectedBee.id){
+    //             beeComponent.updateTodosCount();
+    //         }
+    //     });
+    // }
 };
