@@ -172,11 +172,11 @@ class BeeComponent {
     };
 
     selected(){
-        this.beeContainer.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-azure');
+        this.beeContainer.classList.add('bgAzure');
     }
 
     unSelected(){
-        this.beeContainer.style.backgroundColor = getComputedStyle(document.documentElement).getProperty('bg-white');
+        this.beeContainer.classList.remove('bgAzure');
     }
 
     updatePostCount(){

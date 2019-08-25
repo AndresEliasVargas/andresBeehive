@@ -6,8 +6,15 @@ class BeesComponent{
         this.beesElement = document.getElementById('beesComponent');
     }
 
-    showBees(bees){
+    showBees(bees) {
+        let beesArray = [];
         this.beesElement.innerHTML = '';
-        bees.map(bee => new BeeComponent(bee, this.beesElement, this.uiManager));
+
+        bees.forEach(bee => {
+            let beeComponent = new BeeComponent(bee, this.beesElement, this.uiManager);
+            beesArray.push(beeComponent);
+        });
+
+        return beesArray;
     }
 };

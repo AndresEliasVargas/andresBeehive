@@ -98,6 +98,10 @@ textarea {
   padding-top: .75rem;
 }
 
+.bgAzure{
+  background: var(--bg-azure);
+}
+
 @media all and (max-width: 400px) {
   h3 {
     font-size: 1.34rem;
