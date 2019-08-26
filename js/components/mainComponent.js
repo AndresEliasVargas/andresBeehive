@@ -11,7 +11,7 @@ class MainComponent {
 
 
         this.beesComponent = new BeesComponent(this);
-        // this.postsComponent = new PostsComponent(this.beesInformation, this);
+        this.postsComponent = new PostsComponent(this.beesInformation, this);
         this.albumsComponent = new AlbumsComponent(this.beesInformation, this);
         this.todosComponent = new TodosComponent(this.beesInformation, this);
         this.newCommentComponent = new NewCommentComponent(this.beesInformation, this, this.appManager);
@@ -24,24 +24,18 @@ class MainComponent {
 
     showBeePosts(bee) {
         this.unSelectBeeComponents();
-        // this.enableNewBtn();
-        this.state = 1;
-        this.selectedBee = bee;
         this.postsComponent.showBeePostsComponent(bee);
         this.postsComponent.show();
         this.albumsComponent.hide();
         this.todosComponent.hide();
         this.newCommentComponent.hide();
-        this.newPostComponent.hide();
+        // this.newPostComponent.hide();
         // this.newTodoComponent.hide();
         // this.updatePostCount();
     };
 
     showBeeAlbums(bee) {
         this.unSelectBeeComponents();
-        // this.disableNewBtn();
-        this.state = 2;
-        this.selectedBee = bee;
         this.albumsComponent.showBeeAlbumsComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.show();
@@ -53,9 +47,6 @@ class MainComponent {
 
     showBeeTodos(bee) {
         this.unSelectBeeComponents();
-        // this.enableNewBtn();
-        this.state = 3;
-        this.selectedBee = bee;
         this.todosComponent.showBeeTodosComponent(bee);
         this.postsComponent.hide();
         this.albumsComponent.hide();
@@ -86,38 +77,6 @@ class MainComponent {
     hideNewPostComponent() {
         this.showBeePosts(this.appManager.dataManager.bee);
     }
-
-    newBtnOnClick() {
-
-        switch (this.state) {
-            case 1:
-                this.newPostComponent.show(this.appManager.dataManager.bee);
-                this.newCommentComponent.hide();
-                this.newTodoComponent.hide();
-                this.postsComponent.hide();
-                this.albumsComponent.hide();
-                this.todosComponent.hide();
-                break;
-            case 3:
-                this.newPostComponent.hide();
-                this.newCommentComponent.hide();
-                this.newTodoComponent.show(this.selectedBee);
-                this.postsComponent.hide();
-                this.albumsComponent.hide();
-                this.todosComponent.hide();
-                break;
-            default:
-                break;
-        }
-    };
-
-    // disableNewBtn() {
-    //     this.newBtn.disabled = true;
-    // }
-
-    // enableNewBtn() {
-    //     this.newBtn.disabled = false;
-    // }
 
     unSelectBeeComponents() {
         this.users.map(beeComponent => {

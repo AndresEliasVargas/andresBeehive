@@ -83,7 +83,7 @@ class NewCommentComponent {
             this.uiManager.appManager.dataManager.bee.email,
             this.textAreaBody.value
         );
-
+        
         this.model.comments.unshift(comment);
         this.model = null;
         this.uiManager.hideNewCommentComponent();
