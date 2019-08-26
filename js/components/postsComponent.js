@@ -1,4 +1,3 @@
-'use strict';
 
 class PostsComponent {
     constructor(pBeesInformation, pUIManager) {

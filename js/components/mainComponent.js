@@ -11,13 +11,11 @@ class MainComponent {
 
 
         this.beesComponent = new BeesComponent(this);
-        this.postsComponent = new PostsComponent(this.beesInformation, this);
+        // this.postsComponent = new PostsComponent(this.beesInformation, this);
         this.albumsComponent = new AlbumsComponent(this.beesInformation, this);
         this.todosComponent = new TodosComponent(this.beesInformation, this);
         this.newCommentComponent = new NewCommentComponent(this.beesInformation, this, this.appManager);
-
-        this.state = 1;
-        // this.beeComponents = [];
+        // this.newPostComponent = new NewPostComponent(this.beesInformation, this, this.appManager);
     };
 
     showMain(pUIManager) {
@@ -34,7 +32,7 @@ class MainComponent {
         this.albumsComponent.hide();
         this.todosComponent.hide();
         this.newCommentComponent.hide();
-        // this.newPostComponent.hide();
+        this.newPostComponent.hide();
         // this.newTodoComponent.hide();
         // this.updatePostCount();
     };
@@ -68,16 +66,15 @@ class MainComponent {
         // this.updateTodosCount();
     };
 
-    showNewCommentComponent(post) {
-        // this.disableNewBtn();
+    showNewCommentComponent(model) {
         this.postsComponent.hide();
         this.albumsComponent.hide();
         this.todosComponent.hide();
-        this.newCommentComponent.show(post);
+        this.newCommentComponent.show(model);
         // this.newPostComponent.hide();
         // this.newTodoComponent.hide();
-    }
-
+    };
+    
     hideNewCommentComponent() {
         this.showBeePosts(this.selectedBee);
     }
@@ -123,18 +120,18 @@ class MainComponent {
     // }
 
     unSelectBeeComponents() {
-        this.users.forEach(beeComponent => {
+        this.users.map(beeComponent => {
             beeComponent.unSelected();
         });
     };
 
     // updatePostCount(){
-    //     this.beeComponents.map(beeComponent => {
-    //         if(beeComponent.model.id == this.selectedBee.id){
-    //             beeComponent.updatePostCount();
-    //         }
-    //     });
-    // }
+        // this.beeComponents.map(beeComponent => {
+        //     if(beeComponent.model.id == this.selectedBee.id){
+        //         beeComponent.updatePostCount();
+        //     }
+        // });
+    //}
 
     // updateTodosCount(){
     //     this.beeComponents.map(beeComponent => {
