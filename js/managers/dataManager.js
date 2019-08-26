@@ -225,7 +225,7 @@ class DataManager {
                     todos = new Todos(todo.userId, todo.title, todo.id, todo.completed);
                     this.addTodosToBee(todos);
                 });
-            };            
+            };
             this.appManager.completeDownload();
         };
     };

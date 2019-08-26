@@ -4,7 +4,7 @@ class BeeComponent {
     constructor(pModel, pParent, pMainComponent) {
         this.model = pModel;
         this.parent = pParent;
-        this.mainComponent = pMainComponent;
+        this.mainComponent = pMainComponent; //mainComponent
 
         //Contenedor de los Bees
         this.beeContainer = document.createElement('div');
@@ -89,13 +89,13 @@ class BeeComponent {
         //Buttons
         this.btnPost = document.createElement('button');
         this.btnPost.setAttribute('id', 'btnPost');
+        this.btnPost.setAttribute('data-user', this.model.username);
         this.btnPost.classList.add(
             'btn',
             'btn-outline-success',
             'mr-3',
             'mb-3'
         );
-        
         this.btnPost.innerHTML = 'Post: ' + this.model.posts.length;
         this.btnPost.onclick = this.onBtnPostClick.bind(this);
 
